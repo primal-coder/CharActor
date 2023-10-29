@@ -7,7 +7,7 @@ def load_json(path):
         return json.load(f)
     
 # Desc: Loads dicts from JSON files
-_dicts = [d[:-5] for d in os.listdir(os.path.dirname(__file__)) if d.endswith('.json') and d != '__init__.py']
+_dicts = [d[:-5] for d in os.listdir(os.path.abspath(os.path.dirname(__file__))) if d.endswith('.json') and d != '__init__.py']
 
 
 def load_dict(name):

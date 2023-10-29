@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='CharActor',
-    version='0.1.1',
+    version='0.1.2',
     description='A module for creating and managing rpg characters.',
     author='James Evans',
     author_email='joesaysahoy@gmail.com',
