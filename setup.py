@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='CharActor',
-    version='0.1.3',
+    version='0.1.4',
     description='A module for creating and managing rpg characters.',
     author='James Evans',
     author_email='joesaysahoy@gmail.com',
@@ -19,5 +19,5 @@ setup(
         'Programming Language :: Python :: 3.8'
         ],
     include_package_data=True,
-    include_dirs=['CharActor/_charactor/dicts/']
+    package_data={'CharActor': ['_charactor/dicts/*.json']}
 )
