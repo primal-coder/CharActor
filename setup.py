@@ -17,5 +17,7 @@ setup(
         'Topic :: Games/Entertainment :: Role-Playing',
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.8'
-        ]
+        ],
+    include_package_data=True,
+    include_dirs=['CharActor/_charactor/dicts/']
 )
