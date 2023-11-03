@@ -1,2 +1,8 @@
 venv/
 /.venv/
+CharActor.egg-info
+dist/
+.idea
+__pycache__
+.monster
+character_bank/

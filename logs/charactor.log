@@ -1,0 +1,120 @@
+2023-11-03 00:17:28,857 - base_actor: BaseActor: Initializing BaseActor class.
+2023-11-03 00:17:28,872 - base_actor: BaseCharacter: Initializing BaseCharacter class.
+2023-11-03 00:17:28,879 - Initializing CharActor.
+2023-11-03 00:17:28,881 - Initializing character bank.
+2023-11-03 00:17:28,884 - Initializing catalogues.
+2023-11-03 00:17:28,887 - Creating catalogue instance.
+2023-11-03 00:17:31,271 - actor: create: Creating character: char1
+2023-11-03 00:17:31,273 - actor: create: No details provided. Creating random character.
+2023-11-03 00:17:31,274 - base_actor: _initialize: Initializing BaseActor instance.
+2023-11-03 00:17:31,275 - base_actor: _add_role: Role set to Rogue
+2023-11-03 00:17:31,276 - base_actor: _add_race: Adding race: Human
+2023-11-03 00:17:31,278 - base_actor: _add_race: Set race to Human
+2023-11-03 00:17:31,279 - base_actor: _add_alignment: Adding alignment: unaligned
+2023-11-03 00:17:31,280 - base_actor: _add_background: Set background to Folk Hero
+2023-11-03 00:17:31,282 - base_actor: _init_ability_scores: Ability scores rolled: [14, 14, 13, 13, 13, 13]
+2023-11-03 00:17:31,283 - base_actor: _add_abilities: Abilities set to {'Strength': STR: 14 (+2), 'Dexterity': DEX: 15 (+2), 'Constitution': CON: 15 (+2), 'Intelligence': INT: 14 (+2), 'Wisdom': WIS: 14 (+2), 'Charisma': CHA: 14 (+2)}
+2023-11-03 00:17:31,284 - base_actor: _add_skills: Adding skills.
+2023-11-03 00:17:31,286 - base_actor: _init_skill_points: Available skill points set to 6
+2023-11-03 00:17:31,287 - base_actor: _init_hp: Initial health points set to 10
+2023-11-03 00:17:31,288 - base_actor: _determine_saves_and_initiative: Determining saving throws and initiative.
+2023-11-03 00:17:31,289 - base_actor: _determine_saves_and_initiative: Fortitude save bonus set to 2
+2023-11-03 00:17:31,290 - base_actor: _determine_saves_and_initiative: Reflex save bonus set to 2
+2023-11-03 00:17:31,292 - base_actor: _determine_saves_and_initiative: Will save bonus set to 2
+2023-11-03 00:17:31,293 - base_actor: _determine_saves_and_initiative: Initiative set to 2
+2023-11-03 00:17:31,294 - base_actor: _set_age: No age provided. Rolling for age.
+2023-11-03 00:17:31,295 - base_actor: _set_age: Age set to 86
+2023-11-03 00:17:31,296 - base_actor: _init_inventory: Initializing inventory.
+2023-11-03 00:17:31,298 - base_actor: _init_inventory: Adding starting equipment: ['Rapier', 'Light Leather', "Dungeoneer's Pack", 'Waterskin', 'Backpack']
+2023-11-03 00:17:31,299 - base_actor: _init_inventory: Found Rapier in Armory
+2023-11-03 00:17:31,300 - base_actor: _add_and_equip_piece: Rapier equipped
+2023-11-03 00:17:31,302 - base_actor: _init_inventory: Building armor set: Light Leather 
+2023-11-03 00:17:31,303 - base_actor: _init_inventory: Light Leather Chestpiece found in Armory
+2023-11-03 00:17:31,305 - base_actor: _add_and_equip_piece: Light Leather Chestpiece equipped
+2023-11-03 00:17:31,306 - base_actor: _init_inventory: Light Leather Helmet found in Armory
+2023-11-03 00:17:31,308 - base_actor: _add_and_equip_piece: Light Leather Helmet equipped
+2023-11-03 00:17:31,309 - base_actor: _init_inventory: Light Leather Gauntlet found in Armory
+2023-11-03 00:17:31,311 - base_actor: _add_and_equip_piece: Light Leather Gauntlet equipped
+2023-11-03 00:17:31,312 - base_actor: _init_inventory: Adding additional Light Leather Gauntlet
+2023-11-03 00:17:31,313 - base_actor: _add_and_equip_piece: Light Leather Gauntlet equipped
+2023-11-03 00:17:31,315 - base_actor: _init_inventory: Light Leather Greaves found in Armory
+2023-11-03 00:17:31,316 - base_actor: _add_and_equip_piece: Light Leather Greaves equipped
+2023-11-03 00:17:31,317 - base_actor: _init_inventory: Light Leather Sabaton found in Armory
+2023-11-03 00:17:31,319 - base_actor: _add_and_equip_piece: Light Leather Sabaton equipped
+2023-11-03 00:17:31,320 - base_actor: _init_inventory: Light Leather Vambrace found in Armory
+2023-11-03 00:17:31,321 - base_actor: _add_and_equip_piece: Light Leather Vambrace equipped
+2023-11-03 00:17:31,323 - base_actor: _init_inventory: Adding additional Light Leather Vambrace
+2023-11-03 00:17:31,324 - base_actor: _add_and_equip_piece: Light Leather Vambrace equipped
+2023-11-03 00:17:31,326 - base_actor: _init_inventory: Light Leather Belt found in Armory
+2023-11-03 00:17:31,327 - base_actor: _add_and_equip_piece: Light Leather Belt equipped
+2023-11-03 00:17:31,328 - base_actor: _init_inventory: Light Leather Pauldron found in Armory
+2023-11-03 00:17:31,330 - base_actor: _add_and_equip_piece: Light Leather Pauldron equipped
+2023-11-03 00:17:31,331 - base_actor: _init_inventory: Adding additional Light Leather Pauldron
+2023-11-03 00:17:31,332 - base_actor: _add_and_equip_piece: Light Leather Pauldron equipped
+2023-11-03 00:17:31,334 - base_actor: _init_inventory: Could not find Dungeoneer's Pack in Armory or Goods
+2023-11-03 00:17:31,335 - base_actor: _init_inventory: Found Waterskin in Goods
+2023-11-03 00:17:31,336 - base_actor: _init_inventory: Found Backpack in Goods
+2023-11-03 00:17:31,338 - base_actor: _init_inventory: Found Iron Pot in Goods
+2023-11-03 00:17:31,339 - base_actor: _init_inventory: Could not find Common Clothes in Armory or Goods
+2023-11-03 00:17:31,340 - actor: create: char1 created.
+2023-11-03 00:18:08,958 - actor: create: Creating character: char2
+2023-11-03 00:18:08,961 - actor: create: No details provided. Creating random character.
+2023-11-03 00:18:08,968 - base_actor: _initialize: Initializing BaseActor instance.
+2023-11-03 00:18:08,975 - base_actor: _add_role: Role set to Fighter
+2023-11-03 00:18:08,978 - base_actor: _add_race: Adding race: Halfling
+2023-11-03 00:18:08,980 - base_actor: _add_race: Set race to Halfling
+2023-11-03 00:18:08,981 - base_actor: _add_alignment: Adding alignment: lawful_neutral
+2023-11-03 00:18:08,982 - base_actor: _add_background: Set background to Custom
+2023-11-03 00:18:08,985 - base_actor: _init_ability_scores: Ability scores rolled: [17, 16, 14, 14, 14, 12]
+2023-11-03 00:18:08,986 - base_actor: _add_abilities: Abilities set to {'Strength': STR: 17 (+3), 'Dexterity': DEX: 14 (+2), 'Constitution': CON: 16 (+3), 'Intelligence': INT: 14 (+2), 'Wisdom': WIS: 14 (+2), 'Charisma': CHA: 14 (+2)}
+2023-11-03 00:18:08,987 - base_actor: _add_skills: Adding skills.
+2023-11-03 00:18:08,989 - base_actor: _init_skill_points: Available skill points set to 6
+2023-11-03 00:18:08,990 - base_actor: _init_hp: Initial health points set to 13
+2023-11-03 00:18:08,991 - base_actor: _determine_saves_and_initiative: Determining saving throws and initiative.
+2023-11-03 00:18:08,993 - base_actor: _determine_saves_and_initiative: Fortitude save bonus set to 3
+2023-11-03 00:18:08,994 - base_actor: _determine_saves_and_initiative: Reflex save bonus set to 2
+2023-11-03 00:18:08,995 - base_actor: _determine_saves_and_initiative: Will save bonus set to 2
+2023-11-03 00:18:08,996 - base_actor: _determine_saves_and_initiative: Initiative set to 2
+2023-11-03 00:18:08,997 - base_actor: _set_age: No age provided. Rolling for age.
+2023-11-03 00:18:08,999 - base_actor: _set_age: Age set to 27
+2023-11-03 00:18:09,000 - base_actor: _init_inventory: Initializing inventory.
+2023-11-03 00:18:09,001 - base_actor: _init_inventory: Adding starting equipment: ['Leather Armor', 'Longsword', 'Waterskin', 'Backpack']
+2023-11-03 00:18:13,693 - actor: create: Creating character: char3
+2023-11-03 00:18:13,695 - actor: create: No details provided. Creating random character.
+2023-11-03 00:18:13,696 - base_actor: _initialize: Initializing BaseActor instance.
+2023-11-03 00:18:13,698 - base_actor: _add_role: Role set to Warlock
+2023-11-03 00:18:13,699 - base_actor: _add_race: Adding race: Dwarf
+2023-11-03 00:18:13,700 - base_actor: _add_race: Set race to Dwarf
+2023-11-03 00:18:13,701 - base_actor: _add_alignment: Adding alignment: lawful_good
+2023-11-03 00:18:13,702 - base_actor: _add_background: Set background to Noble
+2023-11-03 00:18:13,704 - base_actor: _init_ability_scores: Ability scores rolled: [16, 15, 15, 14, 13, 12]
+2023-11-03 00:18:13,706 - base_actor: _add_abilities: Abilities set to {'Strength': STR: 12 (+1), 'Dexterity': DEX: 13 (+1), 'Constitution': CON: 18 (+4), 'Intelligence': INT: 14 (+2), 'Wisdom': WIS: 15 (+2), 'Charisma': CHA: 15 (+2)}
+2023-11-03 00:18:13,707 - base_actor: _add_skills: Adding skills.
+2023-11-03 00:18:13,708 - base_actor: _init_skill_points: Available skill points set to 6
+2023-11-03 00:18:13,710 - base_actor: _init_hp: Initial health points set to 12
+2023-11-03 00:18:13,711 - base_actor: _determine_saves_and_initiative: Determining saving throws and initiative.
+2023-11-03 00:18:13,712 - base_actor: _determine_saves_and_initiative: Fortitude save bonus set to 4
+2023-11-03 00:18:13,713 - base_actor: _determine_saves_and_initiative: Reflex save bonus set to 1
+2023-11-03 00:18:13,714 - base_actor: _determine_saves_and_initiative: Will save bonus set to 2
+2023-11-03 00:18:13,715 - base_actor: _determine_saves_and_initiative: Initiative set to 1
+2023-11-03 00:18:13,717 - base_actor: _set_age: No age provided. Rolling for age.
+2023-11-03 00:18:13,718 - base_actor: _set_age: Age set to 141
+2023-11-03 00:18:13,719 - base_actor: _init_inventory: Initializing inventory.
+2023-11-03 00:18:13,720 - base_actor: _init_inventory: Adding starting equipment: ['Crossbow, Light', 'Component Pouch', 'Tunic', 'Waterskin', 'Backpack']
+2023-11-03 00:18:13,721 - base_actor: _init_inventory: Could not find Crossbow, Light in Armory or Goods
+2023-11-03 00:18:13,723 - base_actor: _init_inventory: Found Component Pouch in Goods
+2023-11-03 00:18:13,724 - base_actor: _init_inventory: Building armor set: Tunic 
+2023-11-03 00:18:13,726 - base_actor: _init_inventory: Tunic found in Armory
+2023-11-03 00:18:13,727 - base_actor: _add_and_equip_piece: Tunic equipped
+2023-11-03 00:18:13,729 - base_actor: _init_inventory: Cloth Cap found in Armory
+2023-11-03 00:18:13,730 - base_actor: _add_and_equip_piece: Cloth Cap equipped
+2023-11-03 00:18:13,731 - base_actor: _init_inventory: Burlap Gloves found in Armory
+2023-11-03 00:18:13,732 - base_actor: _add_and_equip_piece: Burlap Gloves equipped
+2023-11-03 00:18:13,734 - base_actor: _init_inventory: Adding additional Burlap Gloves
+2023-11-03 00:18:13,735 - base_actor: _add_and_equip_piece: Burlap Gloves equipped
+2023-11-03 00:18:13,736 - base_actor: _init_inventory: Found Waterskin in Goods
+2023-11-03 00:18:13,738 - base_actor: _init_inventory: Found Backpack in Goods
+2023-11-03 00:18:13,739 - base_actor: _init_inventory: Could not find Fine Clothes in Armory or Goods
+2023-11-03 00:18:13,740 - base_actor: _init_inventory: Found Signet Ring in Goods
+2023-11-03 00:18:13,741 - base_actor: _init_inventory: Could not find Scroll of Pedigree in Armory or Goods
+2023-11-03 00:18:13,742 - actor: create: char3 created.

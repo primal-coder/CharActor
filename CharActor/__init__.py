@@ -5,7 +5,11 @@ from ._charactor import create, BaseCharacters as _BaseCharacters, character_ban
 from ._objects._items import _Armory, _Goods
 from . import _entity
 
+log('Initializing CharActor.')
+log('Initializing character bank.')
+
 class _Catalogues:
+    log('Initializing catalogues.')
     Armory = None
     Goods = None
     def __init__(self):
@@ -25,6 +29,8 @@ class _Catalogues:
         else:
             print(f'Item {item_name} not found in catalogues.')
             return None
+
+log('Creating catalogue instance.')
         
 Catalogues = _Catalogues()
 

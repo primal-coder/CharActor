@@ -5,7 +5,8 @@ import re
 from random import randint as _randint
 from typing import Optional as _Optional, Any
 
-# Import the getch library for Linux/macOS
+from entyty import AbstractEntity
+
 import getch
 import pyglet.window as _window
 import pymunk
@@ -52,7 +53,6 @@ def get_direction(pointa, pointb):
     )
 
 
-from CharActor._entity import AbstractEntity
 
 
 class BaseActor(AbstractEntity):
@@ -572,7 +572,7 @@ class BaseCharacter(BaseActor):
     AbstractEntity.dispatcher.register_event_type('on_turn_end')
 
     def __init__(self, name, background: str, alignment: str, grid=None):
-        from CharActor._entity import GridEntity
+        from entyty import GridEntity
         character_class = self.__class__.__name__
         class_list = re.findall('[A-Z][^A-Z]*', character_class)
         if 'Half' in class_list:
@@ -678,7 +678,7 @@ class BaseCharacter(BaseActor):
         self.dispatcher.dispatch_event('on_turn_end', self.actions)
 
     def _join_grid(self, grid):
-        from CharActor._entity import GridEntity
+        from entyty import GridEntity
         self._grid = grid
         self._grid_entity = GridEntity(grid=grid, name=self.name.upper(), parent=self)
         self._create_properties()
