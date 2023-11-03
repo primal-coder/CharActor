@@ -67,6 +67,9 @@ class Equipment:
 
     def __contains__(self, key):
         return key in self._slots
+    
+    def __getstate__(self):
+        return self._slots
 
     def update(self, other=None, **kwargs):
         if other:
@@ -138,7 +141,14 @@ class Inventory:
         if item_name is not None:
             for item in self.items:
                 if item.name == item_name:
-                    return item         
+                    return item
+    
+    def __getstate__(self):
+        state = self.__dict__.copy()
+        for item in state['items']:
+            state['items'][state['items'].index(item)] = item.name
+        state['equipment'] = self.equipment.__getstate__()
+        return state
 
     def calc_carry_limit(self):
         return self._parent.Strength.score * 10

@@ -21,7 +21,8 @@
             "Brave",
             "Halfling Nimbleness"
         ],
-        "subraces": null
+        "subraces": null,
+        "parent_race": "Halfling"
     },
     "Stout Halfling": {
         "title": "Stout Halfling",
@@ -45,7 +46,8 @@
             "Brave",
             "Halfling Nimbleness"
         ],
-        "subraces": null
+        "subraces": null,
+        "parent_race": "Halfling"
     },
     "Tinkerton Gnome": {
         "title": "Tinkerton Gnome",
@@ -67,7 +69,8 @@
             "Darkvision",
             "Gnome Cunning"
         ],
-        "subraces": null
+        "subraces": null,
+        "parent_race": "Gnome"
     },
     "Forest Gnome": {
         "title": "Forest Gnome",
@@ -89,7 +92,8 @@
             "Darkvision",
             "Gnome Cunning"
         ],
-        "subraces": null
+        "subraces": null,
+        "parent_race": "Gnome"
     },
     "High Elf": {
         "title": "High Elf",
@@ -118,7 +122,8 @@
             "Cantrip",
             "Extra Language"
         ],
-        "subraces": null
+        "subraces": null,
+        "parent_race": "Elf"
     },
     "Wood Elf": {
         "title": "Wood Elf",
@@ -146,7 +151,8 @@
             "Cantrip",
             "Extra Language"
         ],
-        "subraces": null
+        "subraces": null,
+        "parent_race": "Elf"
     },
     "Dark Elf": {
         "title": "Drow",
@@ -171,7 +177,8 @@
             "Superior Darkvision",
             "Sunlight Sensitivity"
         ],
-        "subraces": null
+        "subraces": null,
+        "parent_race": "Elf"
     },
     "Mountain Dwarf": {
         "title": "Mountain Dwarf",
@@ -196,7 +203,8 @@
             "Tool Proficiency",
             "Stonecunning"
         ],
-        "subraces": null
+        "subraces": null,
+        "parent_race": "Dwarf"
     },
     "Hill Dwarf": {
         "title": "Hill Dwarf",
@@ -221,6 +229,7 @@
             "Tool Proficiency",
             "Stonecunning"
         ],
-        "subraces": null
+        "subraces": null,
+        "parent_race": "Dwarf"
     }
 }

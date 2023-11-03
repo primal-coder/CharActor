@@ -1,6 +1,6 @@
 {
     "Gold Ore": {
-        "item_id": 76,
+        "item_id": 107,
         "name": "Gold Ore",
         "category": "ORE",
         "weight": [
@@ -22,7 +22,7 @@
         "stackable": true
     },
     "Iron Ore": {
-        "item_id": 77,
+        "item_id": 108,
         "name": "Iron Ore",
         "category": "ORE",
         "weight": [
@@ -44,7 +44,7 @@
         "stackable": true
     },
     "Copper Ore": {
-        "item_id": 78,
+        "item_id": 109,
         "name": "Copper Ore",
         "category": "ORE",
         "weight": [
@@ -66,7 +66,7 @@
         "stackable": true
     },
     "Silver Ore": {
-        "item_id": 79,
+        "item_id": 110,
         "name": "Silver Ore",
         "category": "ORE",
         "weight": [
@@ -88,7 +88,7 @@
         "stackable": true
     },
     "Mithril Ore": {
-        "item_id": 80,
+        "item_id": 111,
         "name": "Mithril Ore",
         "category": "ORE",
         "weight": [
@@ -110,7 +110,7 @@
         "stackable": true
     },
     "Adamantite Ore": {
-        "item_id": 81,
+        "item_id": 112,
         "name": "Adamantite Ore",
         "category": "ORE",
         "weight": [
@@ -132,7 +132,7 @@
         "stackable": true
     },
     "Runite Ore": {
-        "item_id": 82,
+        "item_id": 113,
         "name": "Runite Ore",
         "category": "ORE",
         "weight": [
@@ -154,7 +154,7 @@
         "stackable": true
     },
     "Coal": {
-        "item_id": 83,
+        "item_id": 114,
         "name": "Coal",
         "category": "ORE",
         "weight": [
@@ -176,7 +176,7 @@
         "stackable": true
     },
     "Gold Ingot": {
-        "item_id": 84,
+        "item_id": 115,
         "name": "Gold Ingot",
         "category": "INGOT",
         "weight": [
@@ -198,7 +198,7 @@
         "stackable": true
     },
     "Iron Ingot": {
-        "item_id": 85,
+        "item_id": 116,
         "name": "Iron Ingot",
         "category": "INGOT",
         "weight": [
@@ -220,7 +220,7 @@
         "stackable": true
     },
     "Copper Ingot": {
-        "item_id": 86,
+        "item_id": 117,
         "name": "Copper Ingot",
         "category": "INGOT",
         "weight": [
@@ -242,7 +242,7 @@
         "stackable": true
     },
     "Silver Ingot": {
-        "item_id": 87,
+        "item_id": 118,
         "name": "Silver Ingot",
         "category": "INGOT",
         "weight": [
@@ -264,7 +264,7 @@
         "stackable": true
     },
     "Mithril Ingot": {
-        "item_id": 88,
+        "item_id": 119,
         "name": "Mithril Ingot",
         "category": "INGOT",
         "weight": [
@@ -286,7 +286,7 @@
         "stackable": true
     },
     "Adamantite Ingot": {
-        "item_id": 89,
+        "item_id": 120,
         "name": "Adamantite Ingot",
         "category": "INGOT",
         "weight": [
@@ -308,7 +308,7 @@
         "stackable": true
     },
     "Runite Ingot": {
-        "item_id": 90,
+        "item_id": 121,
         "name": "Runite Ingot",
         "category": "INGOT",
         "weight": [
@@ -330,7 +330,7 @@
         "stackable": true
     },
     "Bronze Ingot": {
-        "item_id": 91,
+        "item_id": 122,
         "name": "Bronze Ingot",
         "category": "INGOT",
         "weight": [
@@ -352,7 +352,7 @@
         "stackable": true
     },
     "Steel Ingot": {
-        "item_id": 92,
+        "item_id": 123,
         "name": "Steel Ingot",
         "category": "INGOT",
         "weight": [
@@ -374,7 +374,7 @@
         "stackable": true
     },
     "Oak Log": {
-        "item_id": 93,
+        "item_id": 124,
         "name": "Oak Log",
         "category": "LOG",
         "weight": [
@@ -396,7 +396,7 @@
         "stackable": true
     },
     "Willow Log": {
-        "item_id": 94,
+        "item_id": 125,
         "name": "Willow Log",
         "category": "LOG",
         "weight": [
@@ -418,7 +418,7 @@
         "stackable": true
     },
     "Maple Log": {
-        "item_id": 95,
+        "item_id": 126,
         "name": "Maple Log",
         "category": "LOG",
         "weight": [
@@ -440,7 +440,7 @@
         "stackable": true
     },
     "Yew Log": {
-        "item_id": 96,
+        "item_id": 127,
         "name": "Yew Log",
         "category": "LOG",
         "weight": [
@@ -462,7 +462,7 @@
         "stackable": true
     },
     "Flax Seed": {
-        "item_id": 97,
+        "item_id": 128,
         "name": "Flax Seed",
         "category": "SEED",
         "weight": [
@@ -484,7 +484,7 @@
         "stackable": true
     },
     "Flax": {
-        "item_id": 98,
+        "item_id": 129,
         "name": "Flax",
         "category": "FIBER",
         "weight": [
@@ -506,7 +506,7 @@
         "stackable": true
     },
     "Cotton Seed": {
-        "item_id": 99,
+        "item_id": 130,
         "name": "Cotton Seed",
         "category": "SEED",
         "weight": [
@@ -528,7 +528,7 @@
         "stackable": true
     },
     "Cotton": {
-        "item_id": 100,
+        "item_id": 131,
         "name": "Cotton",
         "category": "FIBER",
         "weight": [
@@ -550,7 +550,7 @@
         "stackable": true
     },
     "Wool": {
-        "item_id": 101,
+        "item_id": 132,
         "name": "Wool",
         "category": "FIBER",
         "weight": [
@@ -572,7 +572,7 @@
         "stackable": true
     },
     "Silk": {
-        "item_id": 102,
+        "item_id": 133,
         "name": "Silk",
         "category": "FIBER",
         "weight": [
@@ -594,7 +594,7 @@
         "stackable": true
     },
     "Leather": {
-        "item_id": 103,
+        "item_id": 134,
         "name": "Leather",
         "category": "HIDE",
         "weight": [

@@ -178,6 +178,7 @@ SPECIAL_ABILITIES = {
                        "You regain all expended spell slots when you finish a long rest."},
 }
 
+special_ability_instances = {}
 
 # Path: begingine/Ability.py
 
@@ -331,7 +332,7 @@ class Ability(AbstractAbility):
         self.temp_mod_duration = 0
 
 class AbilityFactory:
-    """A factory class for creating Ability objects.
+    """A factory class for creating Ability _objects.
 
     Methods:
     - create_ability(parent, ability_name): Create a new Ability object with the given parent object and ability name.
@@ -354,27 +355,15 @@ class AbilityFactory:
         return None
 
 
-class AbstractSpecialAbility(_ABC):
+class AbstractSpecialAbility:
     """An abstract base class for special abilities that a character can have.
 
     Attributes:
     - name (str): The name of the special ability.
     - description (str): A description of the special ability.
     """
-
-    def __init__(
-            self,
-            name: str,
-            description: str
-    ) -> None:
-        """Initialize a new AbstractSpecialAbility object.
-
-        Args:
-        - name (str): The name of the special ability.
-        - description (str): A description of the special ability.
-        """
-        self.name = name
-        self.description = description
+    name = None
+    description = None
 
 
 class SpecialAbility(AbstractSpecialAbility):
@@ -388,9 +377,10 @@ class SpecialAbility(AbstractSpecialAbility):
             self,
             role_title: _Optional[str] = None
     ) -> None:
-        self._role_title = role_title
-        attributes = SPECIAL_ABILITIES[self._role_title]
-        super(SpecialAbility, self).__init__(attributes["name"], attributes["description"])
+        attributes = SPECIAL_ABILITIES[role_title]
+        super(SpecialAbility, self).__init__()
+        self.name = attributes['name']
+        self.description = attributes['description']
 
     def __repr__(self):
         """Return a string representation of the SpecialAbility object.
@@ -427,7 +417,10 @@ class SpecialAbilityFactory:
         special_ability_attr = SPECIAL_ABILITIES[role_title]
         if special_ability_attr is None:
             return None
-        return type(special_ability_attr["name"], (SpecialAbility,), dict(special_ability_attr))
+        special_ability_instance = type(special_ability_attr["name"].replace(' ','_').lower(), (SpecialAbility,), dict(special_ability_attr))(role_title)
+        special_ability_instances[special_ability_attr["name"].replace(' ','_').lower()] = special_ability_instance
+        globals().update(special_ability_instances)
+        return special_ability_instances[special_ability_attr["name"].replace(' ','_').lower()]
 
 
 if __name__ == '__main__':

@@ -14,7 +14,7 @@ def throw_exception(exception_type, message):
     raise exception_type(message)
 
 class AbstractGridEntity(LogicalEntity):
-    # logger.entityi'Initializing abstract grid entity class.')
+    # #logger.entityi'Initializing abstract grid entity class.')
     LogicalEntity._register_event_type('on_occupy')
     LogicalEntity._register_event_type('on_vacate')
     _parent = None
@@ -62,7 +62,7 @@ class AbstractGridEntity(LogicalEntity):
     def cell(self, cell):
         if cell is not None:
             if self.cell is not None:
-                logger.entity(f'[{self.name}] ALREADY OCCUPIES A CELL: {self.cell}')
+                #logger.entity(f'[{self.name}] ALREADY OCCUPIES A CELL: {self.cell}')
                 return
             self._cell = cell
         elif self.cell is not None:
@@ -242,14 +242,14 @@ class GridEntity(AbstractGridEntity):
             parent: _Optional[object] = None,
             *arg, **kwargs
     ):
-        logger.entity(f'Initializing grid entity [{name}].')
+        #logger.entity(f'Initializing grid entity [{name}].')
         super(GridEntity, self).__init__(scene, name)
         self.parent = parent
         self.grid = grid
-        logger.entity(f'[{name}] Finding initial cell.')
+        #logger.entity(f'[{name}] Finding initial cell.')
         init_cell = self.grid.random_cell(attr=('passable', True))
         self.cell = init_cell
-        logger.entity(f'[{name}] Initial cell: {self.cell}')
+        #logger.entity(f'[{name}] Initial cell: {self.cell}')
         self.cell_history = []
         self.last_cell = None
         self._width =  self.grid.cell_size*0.8
@@ -259,7 +259,7 @@ class GridEntity(AbstractGridEntity):
         self._movements_remaining = self.speed // 5
         self._actions = {'move': {i: {'direction': None, 'from': None, 'to': None} for i in range(self.speed // 5)}}
         self.traveling = False
-        logger.entity(f'[{name}] Occupying init cell - {self.cell.designation}.')
+        #logger.entity(f'[{name}] Occupying init cell - {self.cell.designation}.')
         self.occupy(self.cell)
 
     @property
@@ -279,7 +279,7 @@ class GridEntity(AbstractGridEntity):
         return [path[i:i + self.movements] for i in range(0, len(path), self.movements)]
         
     def set_path_to(self, destination: object):
-        logger.entity(f'[{self.name}] SETTING PATH TO: {destination} FROM: {self.cell} DISTANCE: {self.grid.get_distance(self.cell.designation, destination.designation, "cells")}')
+        #logger.entity(f'[{self.name}] SETTING PATH TO: {destination} FROM: {self.cell} DISTANCE: {self.grid.get_distance(self.cell.designation, destination.designation, "cells")}')
         self.path = self.get_path_to(destination)
         if len(self.path) > self.movements:
             self.movement_queue = list(self.slice_path(self.path))
@@ -288,7 +288,7 @@ class GridEntity(AbstractGridEntity):
         self.traveling = True
     
     def vacate(self):
-        logger.entity(f'[{self.name}] VACATING CELL: {self.cell}')
+        #logger.entity(f'[{self.name}] VACATING CELL: {self.cell}')
         self.actions.update({'vacate': f'{self.cell.designation}'})
         self.cell.recv_occupant(self)
         self.cell = None
@@ -300,7 +300,7 @@ class GridEntity(AbstractGridEntity):
                 return
             if cell_to_occupy.occupied:
                 return
-            logger.entity(f'[{self.name}] OCCUPYING CELL: {cell_to_occupy}')
+            #logger.entity(f'[{self.name}] OCCUPYING CELL: {cell_to_occupy}')
             cell_to_occupy.recv_occupant(self)
             self.cell = cell_to_occupy
         self._push_handlers(on_vacate=self.cell.recv_occupant, on_occupy=self.cell.recv_occupant)
@@ -346,7 +346,7 @@ class GridEntity(AbstractGridEntity):
 
     def move_in_direction(self, direction):
         direction = _DIRECTION_MAP[direction] if direction not in _DIRECTION_MAP.values() else direction
-        logger.entity(f'[{self.name}] MOVING IN DIRECTION: {direction}')
+        #logger.entity(f'[{self.name}] MOVING IN DIRECTION: {direction}')
         destination = getattr(self.cell, direction)
         if destination is not None:
             self.move(destination)

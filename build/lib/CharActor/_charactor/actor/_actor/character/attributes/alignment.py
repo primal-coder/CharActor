@@ -13,7 +13,7 @@ ALIGNMENTS = load_dict('alignments')
 
 ALIGNMENT_INSTANCES = {}
 
-class AbstractAlignment(_ABC):
+class AbstractAlignment:
     def __init__(self):
         self._title = None
         self._ethics = None
@@ -44,7 +44,7 @@ class AbstractAlignment(_ABC):
         self._morals = morals
 
     def __repr__(self):
-        return f'{self.title.replace("_", " ").title()}'
+        return self.title
 
 class BaseAlignment(AbstractAlignment):
     def __init__(self, title):
@@ -56,6 +56,7 @@ class BaseAlignment(AbstractAlignment):
 class AlignmentFactory:
     @staticmethod
     def create_alignment(title):
-        attrs = ALIGNMENTS[title]
-        if attrs is not None:
-            return type(title, (BaseAlignment, ), {})
+        alignment_instance = type(title.replace('_', ' ').title().replace(' ', ''), (BaseAlignment, ), {})(title)
+        ALIGNMENT_INSTANCES[title.replace('_', ' ').title().replace(' ', '')] = alignment_instance
+        globals().update(ALIGNMENT_INSTANCES)
+        return globals()[title.title().replace('_', '')]

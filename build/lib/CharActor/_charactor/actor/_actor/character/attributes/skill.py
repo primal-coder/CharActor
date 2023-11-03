@@ -60,6 +60,9 @@ class Skill(AbstractSkill):
 
         super(Skill, self).__init__(parent, self.name, SKILLS[self.name]["description"], SKILLS[self.name]["ability"],
                                     SKILLS[self.name]["proficient"])
+        
+    def __getstate__(self):
+        return self.level
 
     def level_up(self):
         self.dispatch_event('on_level_up', self)
@@ -77,7 +80,9 @@ class SkillFactory:
     @staticmethod
     def create_skill(parent, skill_name):
         if skill_name is not None:
-            return type(skill_name, (Skill,), SKILLS[skill_name])(parent)
+            skill_class = type(skill_name, (Skill,), SKILLS[skill_name])
+            skill_class.__getstate__ = lambda self: self.level
+            return skill_class(parent)
 
 
 class SkillbookMeta(type):
@@ -89,3 +94,9 @@ class Skillbook(_QuietDict, metaclass=SkillbookMeta):
     def __init__(self, parent):
         self._parent = parent
         super(Skillbook, self).__init__()
+        
+    def __getstate__(self):
+        state = self.__dict__.copy()
+        for skill_name, skill in SKILLS.items():
+            state[skill_name.title().replace(' ', '_')] = self[skill_name.title().replace(' ', '_')].__getstate__()
+            

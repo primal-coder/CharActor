@@ -174,7 +174,7 @@ class Ability(AbstractAbility):
 
 
 class AbilityFactory:
-    """A factory class for creating Ability objects.
+    """A factory class for creating Ability _objects.
 
     Methods:
     - create_ability(parent, ability_name): Create a new Ability object with the given parent object and ability name.

@@ -74,7 +74,7 @@
           "description": "You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over long distances. Your contact can provide you with information about criminal activity and might even offer you work opportunities."
         }
       },
-      "Entertainer": { 
+    "Entertainer": { 
         "name": "Entertainer", 
         "description": "You have spent your life as a performer, entertaining crowds with your talent. Whether you were a musician, actor, dancer, or any other type of entertainer, your skills have brought joy and excitement to audiences across the land.", 
         "skills": [ 

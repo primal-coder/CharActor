@@ -20,7 +20,7 @@ class AbstractElement(_ABC):
 
 
 class EntityMeta(type):
-    """A metaclass for entity objects."""
+    """A metaclass for entity _objects."""
 
     def __new__(cls, name, bases, attrs):
         """Create a new entity class."""
@@ -48,7 +48,7 @@ class AbstractEntity(metaclass=EntityMeta):
     _children = None
     _siblings = None
     _parent = None
-    """An abstract base class for entity objects."""
+    """An abstract base class for entity _objects."""
 
     @property
     def name(self):
@@ -96,6 +96,8 @@ class AbstractEntity(metaclass=EntityMeta):
     @property
     def entity_id(self):
         """Return the ID of the entity."""
+        if self._entity_id is None:
+            self._entity_id = _uuid4()
         return self._entity_id.hex
 
     @entity_id.setter
@@ -126,7 +128,7 @@ class AbstractEntity(metaclass=EntityMeta):
     @classmethod
     def _pop_handlers(cls):
         """Pop event handlers from the entity."""
-        cls.dispatcher._pop_handlers()
+        cls.dispatcher.pop_handlers()
 
     @classmethod
     def _register_event_type(cls, event_type):
@@ -204,7 +206,7 @@ class AbstractEntity(metaclass=EntityMeta):
 
 
 class BaseEntity(AbstractEntity):
-    """A base class for entity objects."""
+    """A base class for entity _objects."""
     #logger.entity('Initializing base entity class.')
     def __init__(
             self,

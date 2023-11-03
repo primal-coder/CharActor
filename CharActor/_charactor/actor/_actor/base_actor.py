@@ -2,7 +2,6 @@ from __future__ import annotations
 
 import random
 import re
-import json
 from random import randint as _randint
 from typing import Optional as _Optional, Any
 
@@ -13,14 +12,11 @@ import pymunk
 
 from dicepy import Roll as _Roll
 from dicepy import Die as _Die
-from . import objects
 from .character import *
-from .objects import Armory, Goods
+from CharActor._objects import Armory, Goods
 from CharActor._charactor.dicts import load_dict
 
-def _load_json(path):
-    with open(path, 'r') as f:
-        return json.load(f)
+from CharActor import log, _objects
 
 _ability_rolls = _Roll.ability_rolls
 
@@ -114,7 +110,7 @@ class BaseActor(AbstractEntity):
         _level_up: Levels up the actor.
         __repr__: Returns a string representation of the actor.
     """
-    #logger.log(22, 'Initializing BaseActor class.')
+    log('Initializing BaseActor class.')
     AbstractEntity.dispatcher.register_event_type('on_level_up')
 
     def __init__(
@@ -158,7 +154,6 @@ class BaseActor(AbstractEntity):
         self.armor_class = 0
         self.inventory = None
         self._traveling = False
-        self._labels = []
         self._initialize(role, race, background, alignment, age)
         self._is_turn = False
 
@@ -166,12 +161,12 @@ class BaseActor(AbstractEntity):
     def character_sheet(self):
         def of_equipment():
             for piece in self.inventory.equipment._slots.values():
-                if piece is not None and not isinstance(piece, objects.Weapon):
+                if piece is not None and not isinstance(piece, _objects.Weapon):
                     yield piece
 
         def of_items():
             for item in self.inventory.items:
-                if item is not None and not (isinstance(item, (objects.Weapon, objects.Armor))):
+                if item is not None and not (isinstance(item, (_objects.Weapon, _objects.Armor))):
                     yield item
 
         def tab(tabs=1):
@@ -232,7 +227,7 @@ class BaseActor(AbstractEntity):
         self._is_turn = self is actor
 
     def _initialize(self, role: str , race: str, background: str, alignment: str, age: int):
-        #logger.log(22, 'Initializing BaseActor instance.')
+        log('Initializing BaseActor instance.')
         self._add_role(role)
         self._add_race(race)
         self._add_alignment(alignment)
@@ -259,8 +254,41 @@ class BaseActor(AbstractEntity):
 
     # ... (other parts of your class)
 
+    def __getstate__(self):
+        state = self.__dict__.copy()
+        for k, v in state.copy().items():
+            if k in ['Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer',
+                     'Warlock', 'Wizard']:
+                del state[k]
+            if k in ['Human', 'Dwarf', 'Elf', 'Gnome', 'Half-Elf', 'Half-Orc', 'Halfling', 'Tiefling']:
+                del state[k]
+            if k in ['LawfulGood', 'Lawful', 'LawfulEvil', 'Good', 'TrueNeutral', 'Evil',
+                     'ChaoticGood', 'Chaotic', 'ChaoticEvil', 'Unaligned']:
+                del state[k]
+            if k in ['Acolyte', 'Charlatan', 'Criminal', 'Entertainer', 'FolkHero', 'GuildArtisan', 'Hermit',
+                     'Noble', 'Outlander', 'Sage', 'Sailor', 'Soldier', 'Urchin']:
+                del state[k]
+            if k in ['Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma']:
+                del state[k]
+            if k in ['_skills', 'inventory', 'skillbook']:
+                del state[k]
+            if k in ['_role', '_race', '_background', '_alignment']:
+                state[k] = v.title
+            if k == '_abilities':
+                for K, V in state['_abilities'].items():
+                    state['_abilities'][K] = V.score
+        return state
+            
+    def __setstate__(self, state):
+        self._add_race(state['_race'])
+        self._add_role(state['_role'])
+        self._add_alignment(state['_alignment'])
+        self._add_background(state['_background'])
+        self._add_abilities()
+        return state
+    
     def _spend_skill_points(self):
-        #logger.log(22, 'Spending skill points.')
+        log('Spending skill points.')
         while self.skill_points > 0:
             print(f'You have {self.skill_points} skill points available.')
             print('Which skill would you like to increase?')
@@ -318,22 +346,22 @@ class BaseActor(AbstractEntity):
                 f'{skills_list[cursor_position]} increased to '
                 f'{getattr(self.skillbook, f"{skills_attrs[cursor_position]}").level}'
                 )
-        #logger.log(22, f'Skills increased: {skill_ups}')
+        log(f'Skills increased: {skill_ups}')
 
     def _set_age(self, age: _Optional[int] = None):
         if age is not None and self._race.age['maturity'] <= age <= self._race.age['maximum']:
-            #logger.log(22, 'Provided age value is appropriate for race.')
+            log('Provided age value is appropriate for race.')
             setattr(self, 'age', age)
         elif age is None:
-            #logger.log(22, 'No age provided. Rolling for age.')
+            log('No age provided. Rolling for age.')
             setattr(self, 'age', _randint(self._race.age['maturity'], self._race.age['maximum']))
         else:
             raise ValueError("Age is outside the acceptable range")
-        #logger.log(22, f'Age set to {self.age}')
+        log(f'Age set to {self.age}')
 
     def _init_ability_scores(self):
         initabilityscores = _ability_rolls()
-        #logger.log(22, f'Ability scores rolled: {initabilityscores}')
+        log(f'Ability scores rolled: {initabilityscores}')
         for ability_name, info in ABILITIES.items():
             if self._role.title in info["Primary"]:
                 self._initial_ability_scores[ability_name] = initabilityscores[0]
@@ -349,16 +377,16 @@ class BaseActor(AbstractEntity):
                 ability_instance = ability_class
                 self._abilities[ability_name] = ability_instance
                 setattr(self, ability_name, ability_instance)
-        #logger.log(22, f'Abilities set to {self._abilities}')
+        log(f'Abilities set to {self._abilities}')
 
     def _determine_saves_and_initiative(self):
-        #logger.log(22, 'Determining saving throws and initiative.')
+        log('Determining saving throws and initiative.')
         for save, info in SAVING_THROWS.items():
             ability = info['ability']
             self.saving_throws[save] = self._abilities[ability].modifier
-            #logger.log(22, f'{save} save bonus set to {self.saving_throws[save]}')
+            log(f'{save} save bonus set to {self.saving_throws[save]}')
         self.initiative = self._abilities["Dexterity"].modifier
-        #logger.log(22, f'Initiative set to {self.initiative}')
+        log(f'Initiative set to {self.initiative}')
 
     def _add_role(self, role):
         role_class = RoleFactory.create_role(role)
@@ -367,18 +395,18 @@ class BaseActor(AbstractEntity):
             self._role = role_instance
             self._role._add_special_ability()
             setattr(self, role_instance.title, role_instance)
-        #logger.log(22, f'Role set to {self._role.title}')
+        log(f'Role set to {self._role.title}')
 
     def _init_hp(self):
         self.hp = self._role._hit_die.value + self._abilities["Constitution"].modifier
-        #logger.log(22, f'Initial health points set to {self.hp}')
+        log(f'Initial health points set to {self.hp}')
 
     def _init_skill_points(self):
         self.skill_points = self._role.skill_points + self._abilities["Intelligence"].modifier
-        #logger.log(22, f'Available skill points set to {self.skill_points}')
+        log(f'Available skill points set to {self.skill_points}')
 
     def _add_skills(self):
-        #logger.log(22, 'Adding skills.')
+        log('Adding skills.')
         for skill_name, info in SKILLS.items():
             skill_class = SkillFactory.create_skill(self, skill_name)
             if skill_class is not None:
@@ -391,58 +419,68 @@ class BaseActor(AbstractEntity):
     def _add_race(self, race):
         race_class = RaceFactory.create_race(race)
         if race_class is not None:
-            #logger.log(22, f'Adding race: {race}')
+            log(f'Adding race: {race}')
             race_instance = race_class(race)
             self._race = race_instance
             setattr(self, race_instance.title.replace("-", "_"), race_instance)
-        #logger.log(22, f'Set race to {self._race.title}')
+        log(f'Set race to {self._race.title}')
 
     def _add_background(self, bckgrnd: str):
-        background_class = BackgroundFactory.create_background(bckgrnd)
-        if background_class is not None:
-            #logger.log(22, f'Adding background: {bckgrnd}')
-            background_instance = background_class(bckgrnd)
+        background_instance = BackgroundFactory.background_instances[bckgrnd]
+        if background_instance is not None:
             self._background = background_instance
-            setattr(self, background_instance.title.replace(" ", "_"), background_instance)
-        #logger.log(22, f'Set background to {self._background.title}')
-
+            setattr(self, background_instance.title.replace(" ", ""), background_instance)
+            log(f'Set background to {self._background.title}')
+            return
+        return None
+    
     def _add_alignment(self, algnmnt: str):
-        alignment_class = AlignmentFactory.create_alignment(algnmnt)
-        if alignment_class is not None:
-            #logger.log(22, f'Adding alignment: {algnmnt}')
-            alignment_instance = alignment_class(algnmnt)
-            self._alignment = alignment_instance
-            if not alignment_instance.title.startswith('True'):
-                setattr(self, alignment_instance.title.replace(" ", "").replace('Neutral', ''), alignment_instance)
+        alignment_inst = AlignmentFactory.create_alignment(algnmnt)
+        if alignment_inst is not None:
+            log(f'Adding alignment: {algnmnt}')
+            self._alignment = alignment_inst
+            if not alignment_inst.title.startswith('True'):
+                setattr(self, alignment_inst.title.replace(" ", "").replace('Neutral', ''), alignment_inst)
+                return
+            setattr(self, alignment_inst.title.replace(" ", ""), alignment_inst)
 
     def _init_inventory(self):
-        #logger.log(22, 'Initializing inventory.')
+        log('Initializing inventory.')
         setattr(self, 'inventory', Inventory(self))
-        #logger.log(22, f'Adding starting equipment: {self._role._starting_equipment}')
-        for item in self._role._starting_equipment:
-            if item in ['Leather Armor', 'Light Leather', 'Scale Mail', 'Chain Mail', 'Plate Mail', 'Tunic']:
-                #logger.log(22, f'Building armor set: {item} ')
+        log(f'Adding starting equipment: {self._role._starting_equipment}')
+        for item in self._role._starting_equipment + self._background.equipment:
+            if isinstance(item, list):
+                if len(item) > 1 and (item[1] in Armory or item[1] in Goods):
+                    log(f'Adding {item[0]} {item[1]}')
+                    for _ in range(item[0]):
+                        self.inventory.add_item(item[1])
+                elif not isinstance(item[0], int) and (item[0] in Armory or item[0] in Goods):
+                    self.inventory.add_item(item[0])
+            elif item in ['Leather Armor', 'Light Leather', 'Scale Mail', 'Chain Mail', 'Plate Mail', 'Tunic']:
+                log(f'Building armor set: {item} ')
                 for piece in Armory.armor_manifest:
                     piece_ = Armory[piece]
                     if piece_.set_name == item:
-                        #logger.log(22, f'{piece_.name} found in Armory')
+                        log(f'{piece_.name} found in Armory')
                         self._add_and_equip_piece(piece_)
                         if isinstance(piece_.slot, list):
-                            #logger.log(22, f'Adding additional {piece_.name}')
+                            log(f'Adding additional {piece_.name}')
                             piece_ = Armory[piece]
                             self._add_and_equip_piece(piece_)
             elif item in Armory:
-                #logger.log(22, f'Found {item} in Armory')
+                log(f'Found {item} in Armory')
                 self._add_and_equip_piece(Armory[item])
             elif item in Goods:
-                #logger.log(22, f'Found {item} in Goods')
+                log(f'Found {item} in Goods')
                 self.inventory.add_item(item)
+            else:
+                log(f'Could not find {item} in Armory or Goods')
 
     # TODO Rename this here and in `_init_inventory`
     def _add_and_equip_piece(self, piece):
         self.inventory.add_item(piece.name)
         self.inventory.equip_item(self.inventory.items[-1])
-        #logger.log(22, f'{piece.name} equipped')
+        log(f'{piece.name} equipped')
 
     def _determine_armor_class(self):
         ac = self.Dexterity.modifier
@@ -530,7 +568,7 @@ class BaseCharacter(BaseActor):
         _see_item: Checks if an item is visible to the character.
         look_around: Looks around the character's surroundings.
     """
-    #logger.log(22, 'Initializing BaseCharacter class.')
+    log('Initializing BaseCharacter class.')
     AbstractEntity.dispatcher.register_event_type('on_turn_end')
 
     def __init__(self, name, background: str, alignment: str, grid=None):
@@ -556,8 +594,25 @@ class BaseCharacter(BaseActor):
         self._is_turn = False
         self._nearby_items = {}
         self._target = None
-        
+
     def _create_properties(self):
+        """Called when the character is added to a grid. Creates the relevant properties and makes them accessible to
+        the character. Adds the following properties:
+        
+        grid: The grid the character is on.
+        grid_entity: The grid entity associated with the character.
+        movements: The movements available to the character.
+        movements_remaining: The movements remaining for the character.
+        movement_queue: The movement queue for the character.
+        cell: The cell the character is in.
+        cell_name: The name of the cell the character is in.
+        cell_history: The history of the cells the character has been in.
+        last_cell: The last cell the character was in.
+        x: The x coordinate of the character.
+        y: The y coordinate of the character.
+        position: The position of the character.
+        path: The path the character is following.
+        """
         if self._grid_entity is not None:
             setattr(self, 'grid', self._grid)
             setattr(self.__class__, 'grid', property(lambda self: self._grid))
@@ -628,19 +683,23 @@ class BaseCharacter(BaseActor):
         self._grid_entity = GridEntity(grid=grid, name=self.name.upper(), parent=self)
         self._create_properties()
 
-    def saving_throw(self, save, dc):
-        mod = self.saving_throws[save.title()]
-        return d20.check(mod, dc)
-
+    def reflex_save(self, dc):
+        self.Dexterity.reflex_save(dc)
+        
+    def fortitude_save(self, dc):
+        self.Constitution.fortitude_save(dc)
+        
+    def will_save(self, dc):
+        self.Wisdom.will_save(dc)
+        
     def _set_target(self, target):
         self._target = target
 
     def move(self, direction):
-        if self._is_turn and direction in ['north_west', 'north', 'north_east', 'east', 'south_east', 'south', 'south_west', 'west']:
+        if direction in ['north_west', 'north', 'north_east', 'east', 'south_east', 'south', 'south_west', 'west']:
             self.grid_entity.move_in_direction(direction)
             self.actions['move'] = self.grid_entity.actions['move']
             return f'--> {self.actions["move"][len(self.actions["move"]) - 1]["to"]}'
-        print(f"It's not {self.name}'s turn.")
 
     def attack(self):
         if 'attack' in self._actions.keys():
@@ -652,22 +711,25 @@ class BaseCharacter(BaseActor):
         if self.grid.get_distance(self.cell_name, self._target.cell_name) > self.inventory.equipment['MAIN_HAND'].range:
             print('Target out of range.')
             return
+        result = self._attack_figure()
+        print(result)
+        self.actions['attack'] = {'target': self._target, 'weapon': self.inventory.equipment['MAIN_HAND'],
+                                  'result': result}
+
+    def _attack_figure(self):
         attack_roll = d20.roll()
         if attack_roll == 20:
             damage = self.inventory.equipment['MAIN_HAND'].damage.roll() * 2
             self._target.hp -= damage
-            result = f'Critical hit! {damage} damage dealt.'
+            return f'Critical hit! {damage} damage dealt.'
         elif attack_roll == 1:
-            result = 'Critical miss!'
+            return 'Critical miss!'
         elif attack_roll + self.Strength.modifier >= self._target.armor_class:
             damage = self.inventory.equipment['MAIN_HAND'].damage.roll() + self.Strength.modifier
             self._target.hp -= damage
-            result = f'{damage} damage dealt.'
+            return f'{damage} damage dealt.'
         else:
-            result = 'Miss!'
-        print(result)
-        self.actions['attack'] = {'target': self._target, 'weapon': self.inventory.equipment['MAIN_HAND'],
-                                  'result': result}
+            return 'Miss!'
 
     def pickup(self, item):
         if self._grid_entity is None:
@@ -707,5 +769,5 @@ class BaseCharacter(BaseActor):
         for cell in self.grid.get_area(self.cell_name, 20):
             if cell.entry_unit['players'] is not None:
                 for player in cell.entry_unit['players'].values():
-                    if player is not self:
-                        print(f'You see a {player.parent.race.title()} {player.parent.role.title()} nearby.')
+                    if player.parent != self:
+                        print(f'You see a {player.parent._race.title()} {player.parent._role.title()} nearby.')

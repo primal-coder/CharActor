@@ -1,7 +1,5 @@
 from pyglet.event import EventDispatcher as _EventDispatcher
-from abc import ABC as _ABC
-from typing import Optional as _Optional
-from ...objects import ItemStack, Armory, Goods
+from CharActor._objects import ItemStack, Armory, Goods
 
 EQUIPMENT_SLOTS = {
     'HEAD': None,
@@ -67,6 +65,9 @@ class Equipment:
 
     def __contains__(self, key):
         return key in self._slots
+    
+    def __getstate__(self):
+        return self._slots
 
     def update(self, other=None, **kwargs):
         if other:
@@ -138,7 +139,14 @@ class Inventory:
         if item_name is not None:
             for item in self.items:
                 if item.name == item_name:
-                    return item         
+                    return item
+    
+    def __getstate__(self):
+        state = self.__dict__.copy()
+        for item in state['items']:
+            state['items'][state['items'].index(item)] = item.name
+        state['equipment'] = self.equipment.__getstate__()
+        return state
 
     def calc_carry_limit(self):
         return self._parent.Strength.score * 10
@@ -165,7 +173,7 @@ class Inventory:
         self.acquire_possession(item)
 
     def add_item(self, item_name, quantity=1):
-        item_name = item_name.replace(" ", "")
+        item_name = item_name
         if quantity > 1:
             for _ in range(quantity):
                 self.add_item(item_name)

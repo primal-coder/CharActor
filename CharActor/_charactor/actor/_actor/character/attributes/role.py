@@ -18,13 +18,13 @@ ROLE_ATTRIBUTES = load_dict('role_attributes')
 role_instances = {}
 
 
-class AbstractRole(_ABC):
+class AbstractRole:
     def __new__(cls, *args, **kwargs):
         if kwargs.get('title', None) is not None:
             title = kwargs.get('title').capitalize()
         elif isinstance(args[0], str):
             title = args[0].capitalize()
-        attributes = ROLE_ATTRIBUTES[f'{title}']
+        attributes = ROLE_ATTRIBUTES[title]
         if attributes is not None:
             for attr in attributes:
                 setattr(cls, f'_{attr}', attributes[attr])
@@ -105,10 +105,9 @@ class Role(BaseRole):
 
     def _add_special_ability(self):
         ability_name = _SPECIAL_ABILITIES[self.title]["name"]
-        ability_class = _SpecialAbilityFactory.create_special_ability(self.title)
-        if ability_class is not None:
-            ability_instance = ability_class(self.title)
-            self._special_abilities[ability_name] = ability_instance
+        if ability_name is not None:
+            ability_instance = _SpecialAbilityFactory.create_special_ability(self.title)
+            self._special_abilities[ability_name.replace(" ", "_").lower()] = ability_instance
             setattr(self, ability_name.replace(" ", "_").lower(), ability_instance)
 
 
@@ -122,7 +121,9 @@ class RoleFactory:
             return None
         role_instances[role_name] = type(role_name, (Role,), {'title': role_attr['title']})
         # Create a new class based on the role attributes
-        return role_instances[role_name]
+        setattr(Role, role_name, role_instances[role_name])
+        globals().update(role_instances)
+        return globals()[role_name]
 
 
 # for role_name, role_attributes in ROLE_ATTRIBUTES.items():

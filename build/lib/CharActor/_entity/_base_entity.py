@@ -20,7 +20,7 @@ class AbstractElement(_ABC):
 
 
 class EntityMeta(type):
-    """A metaclass for entity objects."""
+    """A metaclass for entity _objects."""
 
     def __new__(cls, name, bases, attrs):
         """Create a new entity class."""
@@ -48,7 +48,7 @@ class AbstractEntity(metaclass=EntityMeta):
     _children = None
     _siblings = None
     _parent = None
-    """An abstract base class for entity objects."""
+    """An abstract base class for entity _objects."""
 
     @property
     def name(self):
@@ -204,7 +204,7 @@ class AbstractEntity(metaclass=EntityMeta):
 
 
 class BaseEntity(AbstractEntity):
-    """A base class for entity objects."""
+    """A base class for entity _objects."""
     #logger.entity('Initializing base entity class.')
     def __init__(
             self,

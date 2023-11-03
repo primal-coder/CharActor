@@ -2,13 +2,13 @@ from setuptools import setup, find_packages
 
 setup(
     name='CharActor',
-    version='0.1.4',
+    version='0.2.9008',
     description='A module for creating and managing rpg characters.',
     author='James Evans',
     author_email='joesaysahoy@gmail.com',
     url='https://github.com/primal-coder/CharActor',
     packages=find_packages(),
-    install_requires=['dicepy', 'getch', 'pyglet'],
+    install_requires=['dicepy', 'getch', 'pyglet', 'pymunk'],
     python_requires='>=3.8',
     keywords='rpg character dnd d&d dungeons and dragons dungeons & dragons player character actor charactor',
     classifiers=[

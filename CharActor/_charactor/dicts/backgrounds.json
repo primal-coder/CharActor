@@ -6,19 +6,20 @@
             "Insight",
             "Religion"
         ],
-        "tools": [
-            "None"
-        ],
+        "tools": null,
         "languages": [
             "Two of your choice"
         ],
         "equipment": [
-            "A holy symbol (a gift to you when you entered the priesthood)",
-            "A prayer book or prayer wheel",
-            "5 sticks of incense",
+            "Holy Symbol",
+            "Prayer Book",
+            "Incense",
             "Vestments",
-            "A set of common clothes",
-            "A pouch containing 15 gp"
+            "Common Clothes",
+            [
+                15,
+                "Gold Piece"
+            ]
         ],
         "special": {
             "name": "Shelter of the Faithful",
@@ -33,17 +34,19 @@
             "Sleight of Hand"
         ],
         "tools": [
-            "Disguise kit",
-            "Forgery kit"
+            "Disguise Kit",
+            "Forgery Kit"
         ],
-        "languages": [
-            "None"
-        ],
+        "languages": null,
         "equipment": [
-            "A set of fine clothes",
-            "A disguise kit",
-            "Tools of the con of your choice (ten stoppered bottles filled with colored liquid, a set of weighted dice, a deck of marked cards, or a signet ring of an imaginary duke)",
-            "A belt pouch containing 15 gp"
+            "Fine Clothes",
+            "Weighted Dice",
+            "Marked Cards",
+            "Fake Signet Ring",
+            [
+                15,
+                "Gold Piece"
+            ]
         ],
         "special": {
             "name": "False Identity",
@@ -58,23 +61,24 @@
           "Stealth"
         ],
         "tools": [
-          "One type of gaming set",
+          "Chess Set",
           "Thieves' tools"
         ],
-        "languages": [
-          "None"
-        ],
+        "languages": null,
         "equipment": [
-          "A crowbar",
-          "A set of dark common clothes including a hood",
-          "A belt pouch containing 15 gp"
+          "Crowbar",
+          "Hooded Common Clothes",
+        [
+            15,
+            "Gold Piece"]
+        
         ],
         "special": {
           "name": "Criminal Contact",
           "description": "You have a reliable and trustworthy contact who acts as your liaison to a network of other criminals. You know how to get messages to and from your contact, even over long distances. Your contact can provide you with information about criminal activity and might even offer you work opportunities."
         }
       },
-      "Entertainer": { 
+    "Entertainer": { 
         "name": "Entertainer", 
         "description": "You have spent your life as a performer, entertaining crowds with your talent. Whether you were a musician, actor, dancer, or any other type of entertainer, your skills have brought joy and excitement to audiences across the land.", 
         "skills": [ 
@@ -83,15 +87,15 @@
         ], 
         "tools": [ 
             "Disguise kit", 
-            "One musical instrument of your choice" ], 
-        "languages": [ 
-            "None" 
+            "Lute"
         ], 
+        "languages": null, 
         "equipment": [ 
-            "A musical instrument (one of your choice)", 
-            "The favor of an admirer (love letter, lock of hair, or trinket)", 
-            "A costume", 
-            "A belt pouch containing 15 gp" 
+            "Love Letter", 
+            "Stage Costume", 
+            [
+                15,
+                "Gold Piece"] 
             ], 
         "special": { 
             "name": "By Popular Demand", 
@@ -106,18 +110,16 @@
             "Survival" 
             ], 
         "tools": [ 
-            "One type of artisan's tools", 
-            "Land vehicles (land)" 
+            "Trusty Shovel" 
             ], 
-        "languages": [ 
-            "None" 
-            ], 
+        "languages": null,
         "equipment": [ 
-            "A set of artisan's tools (one of your choice)", 
-            "A shovel", 
-            "An iron pot", 
-            "A set of common clothes", 
-            "A belt pouch containing 10 gp" 
+            "Iron Pot", 
+            "Common Clothes", 
+            [
+                10,
+                "Gold Piece"
+            ] 
             ], 
         "special": { 
             "name": "Rustic Hospitality", 
@@ -134,14 +136,12 @@
         "tools": [ 
             "One type of artisan's tools" 
             ], 
-        "languages": [ 
-            "None" 
-            ], 
+        "languages": null,
         "equipment": [ 
             "A set of artisan's tools (one of your choice)", 
-            "A letter of introduction from your guild", 
-            "A set of traveler's clothes", 
-            "A belt pouch containing 15 gp" 
+            "Guild Letter", 
+            "Travelers Clothes", 
+            [] 
             ], 
         "special": { 
             "name": "Guild Membership", 
@@ -163,10 +163,13 @@
         ],
         "equipment": [
             "A scroll case stuffed full of notes from your studies or prayers",
-            "A winter blanket",
-            "A set of common clothes",
-            "An herbalism kit",
-            "5 gp"
+            "Winter Blanket",
+            "Common Clothes",
+            "Herbalism Kit",
+            [
+                5,
+                "Gold Piece"
+            ]
         ],
         "special": {
             "name": "Discovery",
@@ -181,16 +184,19 @@
             "Persuasion" 
             ], 
         "tools": [ 
-            "One type of gaming set" 
+            "Chess Set" 
             ], 
         "languages": [ 
             "One of your choice" 
             ], 
         "equipment": [ 
-            "A set of fine clothes", 
-            "A signet ring", 
-            "A scroll of pedigree", 
-            "A purse containing 25 gp" 
+            "Fine Clothes", 
+            "Signet Ring", 
+            "Scroll of Pedigree", 
+            [
+                25,
+                "Gold Piece"
+            ] 
             ], 
         "special": { 
             "name": "Position of Privilege", 
@@ -204,18 +210,21 @@
             "Athletics", 
             "Survival" 
             ], 
-        "tools": [ 
-            "One musical instrument of your choice" 
-            ], 
+        "tools": [
+            "Mandolin"
+        ],
         "languages": [ 
             "One of your choice" 
             ], 
         "equipment": [ 
-            "A staff", 
-            "A hunting trap", 
-            "A trophy from an animal you killed", 
-            "A set of traveler's clothes", 
-            "A belt pouch containing 10 gp" 
+            "Staff", 
+            "Hunting Trap", 
+            "Bugbear Claw Necklace", 
+            "Travelers Clothes", 
+            [
+                10,
+                ""
+            ] 
             ], 
         "special": { 
             "name": "Wanderer", 
@@ -229,19 +238,20 @@
             "Arcana",
             "History"
         ],
-        "tools": [
-            "None"
-        ],
+        "tools":null,
         "languages": [
             "Two of your choice"
         ],
         "equipment": [
-            "A bottle of black ink",
-            "A quill",
-            "A small knife",
-            "A letter from a dead colleague posing a question you have not yet been able to answer",
-            "A set of common clothes",
-            "A belt pouch containing 10 gp"
+            "Ink Well",
+            "Quill",
+            "Small Knife",
+            "Written Conundrum",
+            "Common Clothes",
+            [
+                10,
+                "Gold Piece"
+            ]
         ],
         "special": {
             "name": "Researcher",
@@ -256,18 +266,18 @@
             "Perception" 
             ], 
         "tools": [ 
-            "Navigator's tools", 
-            "Vehicles (water)" 
+            "Navigators Tools"
             ], 
-        "languages": [ 
-            "None" 
-            ], 
+        "languages": null,
         "equipment": [ 
-            "A belaying pin (club)", 
-            "50 feet of silk rope", 
-            "A lucky charm such as a rabbit foot or a small stone with a hole in the center (or you may roll for a random trinket on the Trinkets table in chapter 5)", 
-            "A set of common clothes", 
-            "A belt pouch containing 10 gp" 
+            "Blackjack", 
+            "Silk Rope", 
+            "Rabbit Foot", 
+            "Common Clothes", 
+            [
+                10,
+                "Gold Piece"
+            ] 
             ], 
         "special": { 
             "name": "Ship's Passage", 
@@ -282,18 +292,17 @@
             "Intimidation"
         ],
         "tools": [
-            "One type of gaming set",
-            "Vehicles (land)"
+            "Dice Set"
         ],
-        "languages": [
-            "None"
-        ],
+        "languages":null,
         "equipment": [
-            "An insignia of rank",
-            "A trophy taken from a fallen enemy (a dagger, broken blade, or piece of a banner)",
-            "A set of bone dice or deck of cards",
-            "A set of common clothes",
-            "A belt pouch containing 10 gp"
+            "Military Insignia",
+            "Enemy Banner",
+            "Common Clothes",
+            [
+                10,
+                "Gold Piece"
+            ]
         ],
         "special": {
             "name": "Military Rank",
@@ -308,19 +317,20 @@
             "Stealth" 
             ], 
         "tools": [ 
-            "Disguise kit", 
-            "Thieves' tools" 
+            "Disguise Kit", 
+            "Thieves Tools" 
             ], 
-        "languages": [ 
-            "None" 
-            ], 
+        "languages": null,
         "equipment": [ 
-            "A small knife", 
-            "A map of the city you grew up in", 
-            "A pet mouse", 
-            "A token to remember your parents by", 
-            "A set of common clothes", 
-            "A belt pouch containing 10 gp" 
+            "Small Knife", 
+            "City Map", 
+            "Pet Mouse", 
+            "Family Token", 
+            "Common Clothes", 
+            [
+                10,
+                ""
+            ] 
             ], 
         "special": { 
             "name": "City Secrets", 
@@ -330,21 +340,10 @@
     "Custom": {
         "name": "Custom",
         "description": "You can use this section to create a custom background for your character. Choose any two skills, or any two tools, or any two languages. Write a brief description of your character's background.",
-        "skills": [
-            "None"
-        ],
-        "tools": [
-            "None"
-        ],
-        "languages": [
-            "None"
-        ],
-        "equipment": [
-            "None"
-        ],
-        "special": {
-            "name": "None",
-            "description": "None"
-        }
+        "skills":null,
+        "tools":null,
+        "languages":null,
+        "equipment":null,
+        "special":null
     }
 }

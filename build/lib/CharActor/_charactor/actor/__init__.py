@@ -2,6 +2,7 @@ from ... import _character_bank as character_bank
 from ..._character_bank import _Create
 from ._actor import _character_list, _base_characters, _Armory, _Goods
 
+from CharActor import log
 
 # print('Welcome to the character creation module!\n\n You can create a new character by calling the create() '
 #       'function.')
@@ -47,13 +48,26 @@ def create(obj_name=None, name=None, role=None, race=None, background=None,  ali
         obj_name = obj_name
     else:                
         obj_name = 'char1'
-    for param in [name, role, race, alignment]:
-        if param is None:
-            continue
-        setattr(character_bank, f'{obj_name}', _Create(obj_name, name, role, race, background, alignment, grid))
-        if grid is not None:
-            getattr(character_bank, f'{obj_name}')._join_grid(grid)
-        return
-    setattr(character_bank, f'{obj_name}', _Create(obj_name))
+    log(f'Creating character: {obj_name}')
+    details = []
+    if name is not None:
+        log(f'\tname: {name}')
+        details.append(name)
+    if role is not None:
+        log(f'\trole: {role}')
+        details.append(role)
+    if race is not None:
+        log(f'\trace: {race}')
+        details.append(race)
+    if background is not None:
+        log(f'\tbackground: {background}')
+        details.append(background)
+    if alignment is not None:
+        log(f'\talignment: {alignment}')
+        details.append(alignment)
+    if not details:
+        log('No details provided. Creating random character.')
+    setattr(character_bank, f'{obj_name}', _Create(obj_name, name, role, race, background, alignment))
+    log(f'{obj_name} created.')
     if grid is not None:
         getattr(character_bank, f'{obj_name}')._join_grid(grid)

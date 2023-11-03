@@ -1,6 +1,7 @@
+import pickle as _pickle
+
 from CharActor._quiet_dict import QuietDict as _QuietDict
 from ._charactor.actor._actor import _character_list, _ALIGNMENTS, _BACKGROUNDS
-
 
 _char_list = _character_list._char_list
 
@@ -58,6 +59,10 @@ class _create(_QuietDict):
             locals()[obj_name]._join_grid(grid)
         setattr(self, f'_{obj_name}', locals()[obj_name])
         return locals()[obj_name]
+    
+    def _save_character(self, character, file_name):
+        with open(f'CharActor/character_bank/{file_name}.pickle', 'wb') as file:
+            _pickle.dump(character, file)
 
 
 _Create = _create()

@@ -1,6 +1,6 @@
 {
     "Leather Cuirass": {
-        "item_id": 150,
+        "item_id": 181,
         "name": "Leather Cuirass",
         "slot": "CHEST",
         "weight": [
@@ -19,7 +19,7 @@
         "set_name": "Leather Armor"
     },
     "Leather Helmet": {
-        "item_id": 151,
+        "item_id": 182,
         "name": "Leather Helmet",
         "slot": "HEAD",
         "weight": [
@@ -38,7 +38,7 @@
         "set_name": "Leather Armor"
     },
     "Leather Gauntlet": {
-        "item_id": 152,
+        "item_id": 183,
         "name": "Leather Gauntlet",
         "slot": [
             "LEFT_HAND",
@@ -60,7 +60,7 @@
         "set_name": "Leather Armor"
     },
     "Leather Boots": {
-        "item_id": 153,
+        "item_id": 184,
         "name": "Leather Boots",
         "slot": "FEET",
         "weight": [
@@ -79,7 +79,7 @@
         "set_name": "Leather Armor"
     },
     "Leather Leggings": {
-        "item_id": 154,
+        "item_id": 185,
         "name": "Leather Leggings",
         "slot": "LEGS",
         "weight": [
@@ -98,7 +98,7 @@
         "set_name": "Leather Armor"
     },
     "Leather Bracer": {
-        "item_id": 155,
+        "item_id": 186,
         "name": "Leather Bracer",
         "slot": [
             "LEFT_WRIST",
@@ -120,7 +120,7 @@
         "set_name": "Leather Armor"
     },
     "Leather Belt": {
-        "item_id": 156,
+        "item_id": 187,
         "name": "Leather Belt",
         "slot": "WAIST",
         "weight": [
@@ -139,7 +139,7 @@
         "set_name": "Leather Armor"
     },
     "Leather Pauldron": {
-        "item_id": 157,
+        "item_id": 188,
         "name": "Leather Pauldron",
         "slot": [
             "LEFT_SHOULDER",
@@ -161,7 +161,7 @@
         "set_name": "Leather Armor"
     },
     "Chainmail Hauberk": {
-        "item_id": 158,
+        "item_id": 189,
         "name": "Chainmail Hauberk",
         "slot": "CHEST",
         "weight": [
@@ -180,7 +180,7 @@
         "set_name": "Chain Mail"
     },
     "Chainmail Coif": {
-        "item_id": 159,
+        "item_id": 190,
         "name": "Chainmail Coif",
         "slot": "HEAD",
         "weight": [
@@ -199,7 +199,7 @@
         "set_name": "Chain Mail"
     },
     "Chainmail Gauntlet": {
-        "item_id": 160,
+        "item_id": 191,
         "name": "Chainmail Gauntlet",
         "slot": [
             "LEFT_HAND",
@@ -221,7 +221,7 @@
         "set_name": "Chain Mail"
     },
     "Chainmail Boots": {
-        "item_id": 161,
+        "item_id": 192,
         "name": "Chainmail Boots",
         "slot": "FEET",
         "weight": [
@@ -240,7 +240,7 @@
         "set_name": "Chain Mail"
     },
     "Chainmail Leggings": {
-        "item_id": 162,
+        "item_id": 193,
         "name": "Chainmail Leggings",
         "slot": "LEGS",
         "weight": [
@@ -259,7 +259,7 @@
         "set_name": "Chain Mail"
     },
     "Chainmail Bracer": {
-        "item_id": 163,
+        "item_id": 194,
         "name": "Chainmail Bracer",
         "slot": [
             "LEFT_WRIST",
@@ -281,7 +281,7 @@
         "set_name": "Chain Mail"
     },
     "Chainmail Belt": {
-        "item_id": 164,
+        "item_id": 195,
         "name": "Chainmail Belt",
         "slot": "WAIST",
         "weight": [
@@ -300,7 +300,7 @@
         "set_name": "Chain Mail"
     },
     "Chainmail Pauldron": {
-        "item_id": 165,
+        "item_id": 196,
         "name": "Chainmail Pauldron",
         "slot": [
             "LEFT_SHOULDER",
@@ -322,7 +322,7 @@
         "set_name": "Chain Mail"
     },
     "Plate Mail Armor": {
-        "item_id": 166,
+        "item_id": 197,
         "name": "Plate Mail Armor",
         "slot": "CHEST",
         "weight": [
@@ -341,7 +341,7 @@
         "set_name": "Plate Mail"
     },
     "Plate Helmet": {
-        "item_id": 167,
+        "item_id": 198,
         "name": "Plate Helmet",
         "slot": "HEAD",
         "weight": [
@@ -360,7 +360,7 @@
         "set_name": "Plate Mail"
     },
     "Plate Gauntlet": {
-        "item_id": 168,
+        "item_id": 199,
         "name": "Plate Gauntlet",
         "slot": [
             "LEFT_HAND",
@@ -382,7 +382,7 @@
         "set_name": "Plate Mail"
     },
     "Plate Greaves": {
-        "item_id": 169,
+        "item_id": 200,
         "name": "Plate Greaves",
         "slot": "LEGS",
         "weight": [
@@ -401,7 +401,7 @@
         "set_name": "Plate Mail"
     },
     "Plate Sabaton": {
-        "item_id": 170,
+        "item_id": 201,
         "name": "Plate Sabaton",
         "slot": "FEET",
         "weight": [
@@ -420,7 +420,7 @@
         "set_name": "Plate Mail"
     },
     "Plate Vambrace": {
-        "item_id": 171,
+        "item_id": 202,
         "name": "Plate Vambrace",
         "slot": [
             "LEFT_WRIST",
@@ -442,7 +442,7 @@
         "set_name": "Plate Mail"
     },
     "Plate Belt": {
-        "item_id": 172,
+        "item_id": 203,
         "name": "Plate Belt",
         "slot": "WAIST",
         "weight": [
@@ -461,7 +461,7 @@
         "set_name": "Plate Mail"
     },
     "Plate Pauldron": {
-        "item_id": 173,
+        "item_id": 204,
         "name": "Plate Pauldron",
         "slot": [
             "LEFT_SHOULDER",
@@ -483,7 +483,7 @@
         "set_name": "Plate Mail"
     },
     "Light Leather Chestpiece": {
-        "item_id": 174,
+        "item_id": 205,
         "name": "Light Leather Chestpiece",
         "slot": "CHEST",
         "weight": [
@@ -502,7 +502,7 @@
         "set_name": "Light Leather"
     },
     "Light Leather Helmet": {
-        "item_id": 175,
+        "item_id": 206,
         "name": "Light Leather Helmet",
         "slot": "HEAD",
         "weight": [
@@ -521,7 +521,7 @@
         "set_name": "Light Leather"
     },
     "Light Leather Gauntlet": {
-        "item_id": 176,
+        "item_id": 207,
         "name": "Light Leather Gauntlet",
         "slot": [
             "LEFT_HAND",
@@ -543,7 +543,7 @@
         "set_name": "Light Leather"
     },
     "Light Leather Greaves": {
-        "item_id": 177,
+        "item_id": 208,
         "name": "Light Leather Greaves",
         "slot": "LEGS",
         "weight": [
@@ -562,7 +562,7 @@
         "set_name": "Light Leather"
     },
     "Light Leather Sabaton": {
-        "item_id": 178,
+        "item_id": 209,
         "name": "Light Leather Sabaton",
         "slot": "FEET",
         "weight": [
@@ -581,7 +581,7 @@
         "set_name": "Light Leather"
     },
     "Light Leather Vambrace": {
-        "item_id": 179,
+        "item_id": 210,
         "name": "Light Leather Vambrace",
         "slot": [
             "LEFT_WRIST",
@@ -603,7 +603,7 @@
         "set_name": "Light Leather"
     },
     "Light Leather Belt": {
-        "item_id": 180,
+        "item_id": 211,
         "name": "Light Leather Belt",
         "slot": "WAIST",
         "weight": [
@@ -622,7 +622,7 @@
         "set_name": "Light Leather"
     },
     "Light Leather Pauldron": {
-        "item_id": 181,
+        "item_id": 212,
         "name": "Light Leather Pauldron",
         "slot": [
             "LEFT_SHOULDER",
@@ -644,7 +644,7 @@
         "set_name": "Light Leather"
     },
     "Tunic": {
-        "item_id": 182,
+        "item_id": 213,
         "name": "Tunic",
         "slot": "CHEST",
         "weight": [
@@ -663,7 +663,7 @@
         "set_name": "Tunic"
     },
     "Cloth Cap": {
-        "item_id": 183,
+        "item_id": 214,
         "name": "Cloth Cap",
         "slot": "HEAD",
         "weight": [
@@ -682,7 +682,7 @@
         "set_name": "Tunic"
     },
     "Burlap Gloves": {
-        "item_id": 184,
+        "item_id": 215,
         "name": "Burlap Gloves",
         "slot": [
             "LEFT_HAND",
@@ -704,7 +704,7 @@
         "set_name": "Tunic"
     },
     "Scaled Cuirass": {
-        "item_id": 185,
+        "item_id": 216,
         "name": "Scaled Cuirass",
         "slot": "CHEST",
         "weight": [
@@ -723,7 +723,7 @@
         "set_name": "Scale Mail"
     },
     "Scaled Helmet": {
-        "item_id": 186,
+        "item_id": 217,
         "name": "Scaled Helmet",
         "slot": "HEAD",
         "weight": [
@@ -742,7 +742,7 @@
         "set_name": "Scale Mail"
     },
     "Scaled Gauntlet": {
-        "item_id": 187,
+        "item_id": 218,
         "name": "Scaled Gauntlet",
         "slot": [
             "LEFT_HAND",
@@ -764,7 +764,7 @@
         "set_name": "Scale Mail"
     },
     "Scaled Boots": {
-        "item_id": 188,
+        "item_id": 219,
         "name": "Scaled Boots",
         "slot": "FEET",
         "weight": [
@@ -783,7 +783,7 @@
         "set_name": "Scale Mail"
     },
     "Scaled Leggings": {
-        "item_id": 189,
+        "item_id": 220,
         "name": "Scaled Leggings",
         "slot": "LEGS",
         "weight": [
@@ -802,7 +802,7 @@
         "set_name": "Scale Mail"
     },
     "Scaled Bracer": {
-        "item_id": 190,
+        "item_id": 221,
         "name": "Scaled Bracer",
         "slot": [
             "LEFT_WRIST",
@@ -824,7 +824,7 @@
         "set_name": "Scale Mail"
     },
     "Scaled Belt": {
-        "item_id": 191,
+        "item_id": 222,
         "name": "Scaled Belt",
         "slot": "WAIST",
         "weight": [
@@ -843,7 +843,7 @@
         "set_name": "Scale Mail"
     },
     "Scaled Pauldron": {
-        "item_id": 192,
+        "item_id": 223,
         "name": "Scaled Pauldron",
         "slot": [
             "LEFT_SHOULDER",

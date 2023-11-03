@@ -14,7 +14,23 @@ SUBRACE_ATTRIBUTES = load_dict('subrace_attributes')
 RACE_INSTANCES = {}
 
 
-class AbstractRace(_ABC):
+class AbstractRace:
+    title = None
+    description = None
+    racial_bonuses = None
+    age = None
+    size = None
+    speed = None
+    languages = None
+    traits = None
+    subraces = None
+    parent_race = None
+    
+    def __repr__(self) -> str:
+        return self.description
+
+
+class BaseRace(AbstractRace):
     def __init__(
             self,
             title: _Optional[str] = None,
@@ -37,12 +53,9 @@ class AbstractRace(_ABC):
         self.languages = languages
         self.traits = traits
         self.subraces = subraces
-
-    def __repr__(self) -> str:
-        return self.description
-
-
-class Race(AbstractRace):
+        self.parent_race = parent_race
+    
+class Race(BaseRace): 
     def __init__(self, title):
         attributes = RACE_ATTRIBUTES.get(title)
         super(Race, self).__init__(attributes['title'], attributes['description'],
@@ -51,13 +64,13 @@ class Race(AbstractRace):
                                    attributes['subraces'])
 
 
-class SubRace(AbstractRace):
+class SubRace(BaseRace):
     def __init__(self, title):
         attributes = SUBRACE_ATTRIBUTES.get(title)
         super(SubRace, self).__init__(attributes['title'], attributes['description'],
                                       attributes['_ability_score_increase'], attributes['_age'], attributes['size'],
                                       attributes['speed'], attributes['languages'], attributes['traits'],
-                                      attributes['subraces'])
+                                      attributes['subraces'], attributes['parent_race'])
 
 
 class RaceFactory:
@@ -70,4 +83,5 @@ class RaceFactory:
             return None
         type_instance = type(race_name, (Race, ), RACE_ATTRIBUTES[race_name])
         RACE_INSTANCES[race_name] = type_instance
+        globals().update(RACE_INSTANCES)
         return RACE_INSTANCES[race_name]

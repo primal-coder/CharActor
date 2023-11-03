@@ -1,4 +1,3 @@
-from abc import ABC as _ABC
 from typing import Optional as _Optional
 import json as _json
 from CharActor._charactor.dicts import load_dict
@@ -9,8 +8,10 @@ def _load_json(path):
 
 BACKGROUNDS = load_dict('backgrounds')
 
+BACKGROUND_INSTANCES = {}
 
-class AbstractBackground(_ABC):
+
+class AbstractBackground:
     _name = None
     _title = None
     _description = None
@@ -83,25 +84,55 @@ class AbstractBackground(_ABC):
     def __repr__(self) -> str:
         return f'{self.name.replace("_", " ").title()}'
 
-
-class Background(AbstractBackground):
-    def __init__(self, name: str) -> None:
-        attrs = BACKGROUNDS[name]
+class BaseBackground(AbstractBackground):
+    def __init__(
+        self, 
+        name: str = None,
+        description: str = None,
+        skills: list = None,
+        tools: list = None,
+        languages: list = None,
+        equipment: list = None,
+        special: str = None
+    ) -> None:
         self.name = name
-        self.description = attrs['description']
-        self.skills = attrs['skills']
-        self.tools = attrs['tools']
-        self.languages = attrs['languages']
-        self.equipment = attrs['equipment']
-        self.special = attrs['special']
-
+        self.description = description
+        self.skills = skills
+        self.tools = tools
+        self.languages = languages
+        self.equipment = equipment
+        self.special = special
+        
+class Background(BaseBackground):
+    def __init__(self) -> None:
+        name = self.__class__.__name__
+        attrs = BACKGROUNDS[name]
+        super(Background, self).__init__(
+            attrs['name'],
+            attrs['description'],
+            attrs['skills'],
+            attrs['tools'],
+            attrs['languages'],
+            attrs['equipment'],
+            attrs['special']
+        )
 
 class BackgroundFactory:
+    background_instances = {}
     @staticmethod
     def create_background(name: str) -> type(Background):
         attrs = BACKGROUNDS[name]
         if attrs is not None:
-            return type(name, (Background, ), {})
+            background_class = type(name, (Background, ), {})
+            background_instance = background_class()
+            BackgroundFactory.background_instances[name] = background_instance
+            globals().update(BackgroundFactory.background_instances)
+            return background_instance
+        
+    @staticmethod
+    def create_backgrounds() -> dict:
+        return [BackgroundFactory.create_background(name) for name in BACKGROUNDS]
+    
+BackgroundFactory.create_backgrounds()
 
 
-BACKGROUND_INSTANCES = {name: BackgroundFactory.create_background(name) for name in BACKGROUNDS}
