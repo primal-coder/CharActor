@@ -287,6 +287,7 @@ class _Item(AbstractItem):
 class ItemByClass(_Item):
     def __init__(self):
         item_name = re.sub(r'([a-z])([A-Z])', r'\1 \2', self.__class__.__name__)
+        item_name = re.sub(r'([a-z])(and )', r'\1 And ', item_name)
         if item_name in _GENERAL_ITEMS_DICT:
             super(ItemByClass, self).__init__(**_GENERAL_ITEMS_DICT[item_name])
         elif item_name in _TRADE_ITEMS_DICT:
@@ -327,6 +328,11 @@ class _ItemStack:
 
         
 class _ItemFactory:
+    @staticmethod
+    def create_item(item_name: str) -> _Optional[type(_Item)]:
+        return type(item_name.title().replace(" ", "", len(item_name.split()) - 1).replace("'", ""), (ItemByClass,), {})
+        
+    
     @staticmethod
     def create_general_item(item_name: str) -> _Item:
         item_class = type(item_name.replace(' ', '').replace("'", ''), (GeneralItemByClass,), {})

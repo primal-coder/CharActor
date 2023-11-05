@@ -919,7 +919,7 @@
             "HEAVY"
         ]
     },
-    "Short-bow": {
+    "Shortbow": {
         "name": "Short-bow",
         "item_id": 164,
         "slot": "MAIN_HAND",
@@ -953,7 +953,7 @@
             "LIGHT"
         ]
     },
-    "Crossbow, light": {
+    "Crossbow, Light": {
         "name": "Crossbow, light",
         "item_id": 165,
         "slot": "MAIN_HAND",
@@ -988,7 +988,7 @@
             "TWO_HANDED"
         ]
     },
-    "Crossbow, hand": {
+    "Crossbow, Hand": {
         "name": "Crossbow, hand",
         "item_id": 166,
         "slot": "MAIN_HAND",
@@ -1022,7 +1022,7 @@
             "LIGHT"
         ]
     },
-    "Crossbow, heavy": {
+    "Crossbow, Heavy": {
         "name": "Crossbow, heavy",
         "item_id": 167,
         "slot": "MAIN_HAND",

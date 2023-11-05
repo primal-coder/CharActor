@@ -1,17 +1,10 @@
 from typing import Union as _Union, Optional as _Optional
+from CharActor._charactor.dicts import load_dict
+import re as _re
 from dicepy import Die
 from ..item import _Item
 
 _Die = Die.Die
-
-import re
-import json as _json
-
-from CharActor._charactor.dicts import load_dict
-
-def _load_json(path):
-    with open(path, 'r') as f:
-        return _json.load(f)
 
 _WEAPONS_DICT = load_dict('weapons')
 
@@ -53,37 +46,41 @@ class _Weapon(_Item):
         self.damage_type = damage_type if damage_type in _DAMAGE_TYPES else 'UNKNOWN'
         self.proficiency = proficiency if proficiency in _WEAPON_PROFICIENCIES else None
         self.weapon_properties = weapon_properties if all(
-            prop in _WEAPON_PROPERTIES for prop in weapon_properties) else None
+                prop in _WEAPON_PROPERTIES for prop in weapon_properties
+        ) else None
         self.weapon_range = weapon_range
         super(_Weapon, self).__init__(
-            item_id=item_id,
-            name=name,
-            category="WEAPON",
-            slot=slot
-            if slot in ('MAIN_HAND', 'OFF_HAND', ('MAIN_HAND', 'OFF_HAND'))
-            else None,
-            weight=weight,
-            material=material,
-            consumable=False,
-            mundane=mundane,
-            description=description,
-            quality=quality,
-            value=value,
-            binding=binding,
-            quest_item=quest_item,
-            relic=relic,
-            *args,
-            **kwargs
+                item_id=item_id,
+                name=name,
+                category="WEAPON",
+                slot=slot
+                if slot in ('MAIN_HAND', 'OFF_HAND', ('MAIN_HAND', 'OFF_HAND'))
+                else None,
+                weight=weight,
+                material=material,
+                consumable=False,
+                mundane=mundane,
+                description=description,
+                quality=quality,
+                value=value,
+                binding=binding,
+                quest_item=quest_item,
+                relic=relic,
+                *args,
+                **kwargs
         )
 
     def __repr__(self):
-        return f"{self.name}({self.damage[0]}{self.damage[1]}/{self.weapon_range[0]}{self.weapon_range[1]})({self.damage_type})[{self.quality}]"
+        return f"{self.name}({self.damage[0]}{self.damage[1]}/{self.weapon_range[0]}{self.weapon_range[1]})(" \
+               f"{self.damage_type})[{self.quality}]"
 
 
 class _WeaponByClass(_Weapon):
     def __init__(self):
-        weapon_name = re.sub(r'([a-z])([A-Z])', r'\1 \2', self.__class__.__name__)
+        weapon_name = _re.sub(r'([a-z])([A-Z])', r'\1 \2', self.__class__.__name__)
+        weapon_name = _re.sub(r'([a-z])(_)([A-Z])', r'\1, \3', weapon_name)
         super(_WeaponByClass, self).__init__(**_WEAPONS_DICT[weapon_name])
+
 
 class _WeaponFactory:
     def __init__(self, weapon_dict=None):
@@ -92,6 +89,6 @@ class _WeaponFactory:
         self.weapon_dict = weapon_dict
 
     @staticmethod
-    def create_weapon(weapon_name: int) -> type | None:
-        weapon_class = type(weapon_name.title().replace(" ", "", len(weapon_name.split()) - 1), (_WeaponByClass,), {})
+    def create_weapon(weapon_name: str) -> type | None:
+        weapon_class = type(weapon_name.replace(" ", "").replace(',','_'), (_WeaponByClass,), {})
         return None if weapon_class is None else weapon_class

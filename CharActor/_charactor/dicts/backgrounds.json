@@ -343,7 +343,13 @@
         "skills":null,
         "tools":null,
         "languages":null,
-        "equipment":null,
+        "equipment":[
+            "Common Clothes",
+            [
+                10,
+                "Gold Piece"
+            ]
+        ],
         "special":null
     }
 }

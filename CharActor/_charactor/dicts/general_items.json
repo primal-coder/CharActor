@@ -302,7 +302,7 @@
         "quest_item": false,
         "relic": false
     },
-    "Lock and Key": {
+    "Lock And Key": {
         "item_id": 19,
         "name": "Lock and Key",
         "category": "TOOLS",
@@ -942,7 +942,7 @@
         "quest_item": false,
         "relic": false
     },
-    "Flint and Steel": {
+    "Flint And Steel": {
         "item_id": 51,
         "name": "Flint and Steel",
         "category": "TOOLS",

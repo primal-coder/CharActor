@@ -1,0 +1,6 @@
+2023-11-05 11:55:08,052 - base_actor: BaseActor: Initializing BaseActor class.
+2023-11-05 11:55:08,068 - base_actor: BaseCharacter: Initializing BaseCharacter class.
+2023-11-05 11:55:08,074 - Initializing CharActor.
+2023-11-05 11:55:08,077 - Initializing character bank.
+2023-11-05 11:55:08,080 - Initializing catalogues.
+2023-11-05 11:55:08,083 - Creating catalogue instance.

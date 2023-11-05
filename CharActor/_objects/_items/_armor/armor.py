@@ -73,5 +73,5 @@ class ArmorByClass(_Armor):
 class ArmorFactory:
     @staticmethod
     def create_armor(armor_name):
-        _armor_class = type(armor_name.title().replace(" ", "", len(armor_name.split()) - 1), (ArmorByClass, ), {})
+        _armor_class = type(armor_name, (ArmorByClass, ), {})
         return None if _armor_class is None else _armor_class

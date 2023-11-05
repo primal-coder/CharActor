@@ -460,9 +460,10 @@ class BaseActor(AbstractEntity):
                     self.inventory.add_item(item[0])
             elif item in ['Leather Armor', 'Light Leather', 'Scale Mail', 'Chain Mail', 'Plate Mail', 'Tunic']:
                 log(f'Building armor set: {item} ')
-                for piece in Armory.armor_manifest:
-                    piece_ = Armory[piece]
+                for piece_ in Armory.items.values():
+                    piece_ = piece_()
                     if piece_.set_name == item:
+                        piece_ = piece_()
                         log(f'{piece_.name} found in Armory')
                         self._add_and_equip_piece(piece_)
                         if isinstance(piece_.slot, list):
