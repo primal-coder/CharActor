@@ -3,7 +3,6 @@ from .__log__ import logger, log
 from ._charactor import dicts as _dicts
 from ._charactor import create, BaseCharacters as _BaseCharacters, character_bank
 from ._objects._items import _Armory, _Goods
-from . import _entity
 
 log('Initializing CharActor.')
 log('Initializing character bank.')

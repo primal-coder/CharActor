@@ -1,2 +1,26 @@
-2023-11-03 00:17:28,824 - GRIDENGINE - __log__ - Setting saves directory ...
-2023-11-03 00:17:28,824 - GRIDENGINE - __log__ - Saves directory set to /devel/boss/envs/CharActor/grid_engine/_saves/
+2023-11-04 17:44:39,794 - GRIDENGINE - __log__ - Setting saves directory ...
+2023-11-04 17:44:39,794 - GRIDENGINE - __log__ - Saves directory set to /devel/boss/envs/CharActor/grid_engine/_saves/
+2023-11-04 17:44:41,135 - GRIDENGINE - __log__ - process_grid(int)
+2023-11-04 17:44:41,135 - GRIDENGINE - __log__ - get_row_strings(int)
+2023-11-04 17:44:41,135 - GRIDENGINE - __log__ - generate_row_strings(int)
+2023-11-04 17:44:41,139 - GRIDENGINE - __log__ - get_column_strings(int)
+2023-11-04 17:44:41,139 - GRIDENGINE - __log__ - generate_column_strings(int)
+2023-11-04 17:44:41,139 - GRIDENGINE - __log__ - get_cell_strings(list)
+2023-11-04 17:44:41,139 - GRIDENGINE - __log__ - generate_cell_strings(list)
+2023-11-04 17:44:41,143 - GRIDENGINE - __log__ - get_cell_coordinates(int)
+2023-11-04 17:44:41,161 - GRIDENGINE - __log__ - get_grid_dict(list)
+2023-11-04 17:44:41,475 - GRIDENGINE - __log__ - generate_quadrant_coordinates(int)
+2023-11-04 17:44:41,475 - GRIDENGINE - __log__ - get_quadrant_indices(list)
+2023-11-04 17:44:41,510 - GRIDENGINE - __log__ - generate_adjacency(dict)
+2023-11-04 17:44:41,961 - GRIDENGINE - __log__ - _init_terrain(TerrainGridBlueprint)
+2023-11-04 17:44:42,269 - GRIDENGINE - __log__ - _set_base_terrain(TerrainGridBlueprint)
+2023-11-04 17:44:42,323 - GRIDENGINE - __log__ - _adjust_passability(TerrainGridBlueprint)
+2023-11-04 17:44:44,220 - GRIDENGINE - __log__ - set_rivers(Terraformer)
+2023-11-04 17:44:44,221 - GRIDENGINE - __log__ - generate_realistic_river(Terraformer)
+2023-11-04 17:44:44,221 - GRIDENGINE - __log__ - get_river_by_walk(Terraformer)
+2023-11-04 17:44:44,223 - GRIDENGINE - __log__ - expand_river_path(Terraformer)
+2023-11-04 17:44:44,250 - GRIDENGINE - __log__ - generate_realistic_river(Terraformer)
+2023-11-04 17:44:44,250 - GRIDENGINE - __log__ - get_river_by_walk(Terraformer)
+2023-11-04 17:44:44,251 - GRIDENGINE - __log__ - expand_river_path(Terraformer)
+2023-11-04 17:44:44,259 - GRIDENGINE - __log__ - get_river_banks(Terraformer)
+2023-11-04 17:44:44,263 - GRIDENGINE - __log__ - expand_riverbanks(Terraformer)

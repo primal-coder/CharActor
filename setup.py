@@ -1,9 +1,14 @@
 from setuptools import setup, find_packages
 
+with open("README.md", "r") as fh:
+    long_description = fh.read()
+
 setup(
     name='CharActor',
-    version='0.2.91',
+    version='0.4.6',
     description='A module for creating and managing rpg characters.',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
     author='James Evans',
     author_email='joesaysahoy@gmail.com',
     url='https://github.com/primal-coder/CharActor',

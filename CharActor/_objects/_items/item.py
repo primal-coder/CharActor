@@ -38,7 +38,7 @@ _GENERAL_ITEMS_DICT = load_dict('general_items')
 _TRADE_ITEMS_DICT = load_dict('trade_items')
 
 
-class AbstractItem(ABC, metaclass=type):
+class AbstractItem(ABC):
     _item_id = None 
     _name = None
     _category = None

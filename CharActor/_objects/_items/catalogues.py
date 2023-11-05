@@ -159,7 +159,7 @@ class _Goods(QuietDict):
             return self.items[item_name]
 
     def _create_grid_meta(self, item_name, item_class):
-        return type(item_name.replace(" ", "").replace(",", "_").replace("-",""), (GridItem, item_class), {'dispatcher': EventDispatcher()})
+        return type(item_name.replace(" ", "").replace(",", "_").replace("-",""), (item_class, ), {'dispatcher': EventDispatcher()})
         
     def _create_item_classes(self):
         for _item_name, _item_attr in _GENERAL_ITEMS_DICT.items():
@@ -192,23 +192,18 @@ class _Goods(QuietDict):
             return item
         return self[item_name]
 
-    # TODO Rename this here and in `get`
     def _create_griditem(self, item_name, grid, cell: _Union[str, type(Cell)]):
-        item_instance = self[item_name]
-        griditem_instance = item_instance._materialize(grid, cell)
-        
-        # item_class = self._get_class(item_name)
-        # combined_class = self._create_grid_meta(item_name, item_class)
-        # cell = grid[cell] if cell is not None and isinstance(cell, str) else cell
-        # griditem_instance = combined_class(grid, item_name, cell)
+        item_class = self._get_class(item_name)
+        item_meta = self._create_grid_meta(item_name, item_class)
+        cell = grid[cell] if cell is not None and isinstance(cell, str) else cell
+        griditem_instance = GridItem(grid, item_name, cell)
         if self._grid_instances.get(item_name, None) is not None:
             item_count = 1 + sum(bool(key.startswith(item_name))
                              for key in list(self._grid_instances.keys()))
             self._grid_instances[f'{item_name}{item_count}'] = griditem_instance
         else:
             self._grid_instances[item_name] = griditem_instance
-        return griditem_instance
-
+        return griditem_instance 
         
 
 Armory = _Armory()

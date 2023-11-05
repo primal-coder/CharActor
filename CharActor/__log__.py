@@ -17,4 +17,4 @@ def log(message):
     if module.__name__ in ['__main__', 'CharActor']:
         return logger.log(99, message)
     caller = frame[3]
-    return logger.log(99, f'{module.__name__[-module.__name__[::-1].index('.'):]}: {caller}: {message}')
+    return logger.log(99, f'{module.__name__[-module.__name__[::-1].index("."):]}: {caller}: {message}')

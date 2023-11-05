@@ -5,7 +5,7 @@ import re
 from random import randint as _randint
 from typing import Optional as _Optional, Any
 
-from entyty import AbstractEntity
+from entyty import _AbstractEntity as AbstractEntity
 
 import getch
 import pyglet.window as _window
@@ -450,7 +450,9 @@ class BaseActor(AbstractEntity):
         log(f'Adding starting equipment: {self._role._starting_equipment}')
         for item in self._role._starting_equipment + self._background.equipment:
             if isinstance(item, list):
-                if len(item) > 1 and (item[1] in Armory or item[1] in Goods):
+                if item == []:
+                    continue
+                elif len(item) > 1 and (item[1] in Armory or item[1] in Goods):
                     log(f'Adding {item[0]} {item[1]}')
                     for _ in range(item[0]):
                         self.inventory.add_item(item[1])
@@ -570,7 +572,7 @@ class BaseCharacter(BaseActor):
     """
     log('Initializing BaseCharacter class.')
     AbstractEntity.dispatcher.register_event_type('on_turn_end')
-
+    dispatcher = AbstractEntity.dispatcher
     def __init__(self, name, background: str, alignment: str, grid=None):
         from entyty import GridEntity
         character_class = self.__class__.__name__
@@ -591,6 +593,7 @@ class BaseCharacter(BaseActor):
             self._create_properties()
         self._actions = {'move':   {i: {'direction': None, 'from': None, 'distance': None, 'to': None} for i in range(self.speed//5)},
                          'attack': {'target': None, 'weapon': None, 'result': None}, 'free': [], 'quick': []}
+        self._action_history = []
         self._is_turn = False
         self._nearby_items = {}
         self._target = None
@@ -620,7 +623,7 @@ class BaseCharacter(BaseActor):
             setattr(self.__class__, 'grid_entity', property(lambda self: self._grid_entity))
             properties = {
                 'movements': self.grid_entity.movements,
-                'movements_remaining': self.grid_entity._movements_remaining,
+                'movements_remaining': self.grid_entity.movements_remaining,
                 'movement_queue': self.grid_entity.movement_queue,
                 'cell': self.grid_entity.cell,
                 'cell_name': self.grid_entity.cell_name,
@@ -634,6 +637,7 @@ class BaseCharacter(BaseActor):
             for attr, value in properties.items():
                 setattr(self, attr, value)
                 setattr(self.__class__, attr, property(lambda self, attr=attr: getattr(self.grid_entity, attr)))
+            self._push_handlers(on_turn_end=self.grid_entity.end_turn)
         else:
             for attr in ['movements', 'movements_remaining', 'movement_queue', 'cell', 'cell_name', 'cell_history', 'last_cell', 'x', 'y', 'position', 'path']:
                 delattr(self, attr)
@@ -675,7 +679,9 @@ class BaseCharacter(BaseActor):
             self._is_turn = True
 
     def end_turn(self):
-        self.dispatcher.dispatch_event('on_turn_end', self.actions)
+        self._action_history.append(self.actions)
+        self.grid_entity.end_turn()
+        self.actions = None
 
     def _join_grid(self, grid):
         from entyty import GridEntity
@@ -697,10 +703,13 @@ class BaseCharacter(BaseActor):
 
     def move(self, direction):
         if direction in ['north_west', 'north', 'north_east', 'east', 'south_east', 'south', 'south_west', 'west']:
-            self.grid_entity.move_in_direction(direction)
+            mvmnt_index = self.grid_entity.move_in_direction(direction)
             self.actions['move'] = self.grid_entity.actions['move']
-            return f'--> {self.actions["move"][len(self.actions["move"]) - 1]["to"]}'
-
+            if mvmnt_index is not None:
+                return f'{self.actions["move"][mvmnt_index]["from"]} --> {self.actions["move"][mvmnt_index]["to"]}'
+            else:
+                return f'Cannot move {direction}.'
+            
     def attack(self):
         if 'attack' in self._actions.keys():
             print('Already attacked this turn.')
