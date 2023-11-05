@@ -1,4 +1,0 @@
-dicepy
-getch
-pyglet
-pymunk
