@@ -459,7 +459,7 @@
         ],
         "material": "STEEL",
         "mundane": true,
-        "description": "A slender sword with a sharp point designed for thrusting attacks.",
+        "description": "A slender sword with a sharp point.",
         "quality": "COMMON",
         "value": [
             25,
@@ -660,7 +660,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron whip.",
+        "description": "A simple ironclad whip.",
         "quality": "COMMON",
         "value": [
             2,
@@ -861,7 +861,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A spiked ball mounted on a shaft, used for striking and piercing attacks.",
+        "description": "A spiked ball mounted on a steel shaft.",
         "quality": "COMMON",
         "value": [
             15,
@@ -1068,7 +1068,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A stitched leather slings for propelling stones or shots.",
+        "description": "A stitched leather sling for propelling stones or shots.",
         "quality": "COMMON",
         "value": [
             1,

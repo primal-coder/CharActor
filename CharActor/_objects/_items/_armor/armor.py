@@ -55,7 +55,10 @@ class _Armor(_Item):
         self.set_name = set_name
 
     def __repr__(self):
-        return f'{super(_Armor, self).__repr__()}[ac {self.armor_class}]'
+        return f'{self.description.lower()}'
+    
+    def __str__(self):
+        return f'{self.name.upper()}[ac {self.armor_class}]'
 
     def _equip(self):
         self._dispatch_event('on_equip', self)

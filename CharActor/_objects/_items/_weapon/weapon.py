@@ -71,7 +71,10 @@ class _Weapon(_Item):
         )
 
     def __repr__(self):
-        return f"{self.name}({self.damage[0]}{self.damage[1]}/{self.weapon_range[0]}{self.weapon_range[1]})(" \
+        return f'{self.description.lower()}.'
+
+    def __str__(self):
+        return f"{self.name.upper()}({self.damage[0]}{self.damage[1]}@{self.weapon_range[0]}{self.weapon_range[1]})(" \
                f"{self.damage_type})[{self.quality}]"
 
 

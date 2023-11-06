@@ -277,6 +277,12 @@ class _Item(AbstractItem):
         self.identified = False
         self.equipped = False
         self.owner = None
+        
+    def __repr__(self):
+        return f'{self.description.lower()}'
+
+    def __str__(self):
+        return f'{self.name}[{self.category}][{self.value[0]} {self.value[1]}][{self.weight[0]} {self.weight[1]}]'
 
     def identify(self):
         if self.identified:

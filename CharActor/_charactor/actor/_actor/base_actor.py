@@ -10,6 +10,7 @@ from entyty import _AbstractEntity as AbstractEntity
 import getch
 import pyglet.window as _window
 import pymunk
+from pymunk import Vec2d
 
 from dicepy import Roll as _Roll
 from dicepy import Die as _Die
@@ -29,19 +30,19 @@ _LEVELS = load_dict('levels')
 
 d20 = _Die.d20()
 
-def get_direction(pointa, pointb):
+def get_direction(pointa: type(Vec2d), pointb: type(Vec2d)):
     angle_degrees = (pointb - pointa).angle_degrees
     angle_degrees = int(angle_degrees)
     angle_degrees %= 360
     cardinal_directions = {
             "E":  range(337, 360) or range(23),
-            "NE": range(23, 68),
-            "N":  range(68, 113),
-            "NW": range(113, 158),
-            "W":  range(158, 203),
-            "SW": range(203, 248),
-            "S":  range(248, 293),
-            "SE": range(293, 338)
+            "NE": range(22, 68),
+            "N":  range(67, 113),
+            "NW": range(112, 158),
+            "W":  range(157, 203),
+            "SW": range(202, 248),
+            "S":  range(247, 293),
+            "SE": range(292, 338)
     }
     return next(
             (
@@ -460,15 +461,15 @@ class BaseActor(AbstractEntity):
                     self.inventory.add_item(item[0])
             elif item in ['Leather Armor', 'Light Leather', 'Scale Mail', 'Chain Mail', 'Plate Mail', 'Tunic']:
                 log(f'Building armor set: {item} ')
-                for piece_ in Armory.items.values():
-                    piece_ = piece_()
-                    if piece_.set_name == item:
-                        piece_ = piece_()
+                for name, piece in Armory._dict.items():
+                    set_name = piece.get('set_name')
+                    if set_name == item:
+                        piece_ = Armory[name]
                         log(f'{piece_.name} found in Armory')
                         self._add_and_equip_piece(piece_)
                         if isinstance(piece_.slot, list):
                             log(f'Adding additional {piece_.name}')
-                            piece_ = Armory[piece]
+                            piece_ = Armory[name]
                             self._add_and_equip_piece(piece_)
             elif item in Armory:
                 log(f'Found {item} in Armory')
@@ -761,6 +762,9 @@ class BaseCharacter(BaseActor):
 
     def _is_in_sight(self, other):
         return self._get_distance(other) <= 20
+    
+    def _is_in_distant_view(self, other):
+        return self._get_distance(other) <= 40
 
     def _see_item(self, item):
         if self._is_in_sight(item):
@@ -768,8 +772,11 @@ class BaseCharacter(BaseActor):
                 self._nearby_items[item.name] = item
                 print(f'You see a {item.name} at your feet.')
             else:
-                direction = get_direction(self.position, item.position)
+                direction = get_direction(Vec2d(self.position[0], self.position[1]), Vec2d(item.position[0], item.position[1]))
                 print(f'You see a {item.name} nearby. ({direction})')
+        elif self._is_in_distant_view(item):
+            direction = get_direction(Vec2d(self.position[0], self.position[1]), Vec2d(item.position[0], item.position[1]))
+            print(f'You see an object some distance to the {direction}')
 
     def look_around(self):
         for item in self.grid.armory._grid_instances.values():

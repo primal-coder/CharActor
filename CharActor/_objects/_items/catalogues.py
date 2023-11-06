@@ -33,11 +33,10 @@ class QuietDict:
             setattr(self, f'{manifest_names}_manifest', [])
 
     def __getitem__(self, key):
-        key = key.title().replace(" ", "")
+        key = key.replace(' ', '').replace(',','_')
         return self.items[key]()
 
     def __setitem__(self, key, value):
-        key = key.title().replace(" ", "")
         self.items[key] = value
 
     def __delitem__(self, key):
@@ -47,8 +46,7 @@ class QuietDict:
         return iter(self.items)
 
     def __contains__(self, key):
-        key = key.title().replace(" ", "")
-        return key in self.items.keys()
+        return key.replace(' ', '') in self.items.keys()
 
     def __repr__(self):
         return repr(self.items)
@@ -80,6 +78,7 @@ def _create_weapon(weapon_name: str):
 class _Armory(QuietDict):
     def __init__(self):
         super(_Armory, self).__init__(['armor', 'weapons'])
+        self._dict = {**_ARMOR_DICT, **_WEAPONS_DICT}
         self.weapons_manifest = []
         self.armor_manifest = []
         self._weapon_classes = {}
