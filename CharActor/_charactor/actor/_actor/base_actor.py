@@ -29,29 +29,27 @@ _MOVE_KEYS = [_key.W, _key.D, _key.S, _key.A]
 _LEVELS = load_dict('levels')
 
 d20 = _Die.d20()
+CARDINAL_DIRECTIONS = {
+        "East":  list(range(337, 360)) + list(range(23)) + [0],
+        "North-East": range(22, 68),
+        "North":  range(67, 113),
+        "North-West": range(112, 158),
+        "West":  range(157, 203),
+        "South-West": range(202, 248),
+        "South":  range(247, 293),
+        "South-East": range(292, 338)
+}
 
-def get_direction(pointa: type(Vec2d), pointb: type(Vec2d)):
+def get_direction(pointa: tuple[int, int] | type(Vec2d), pointb: tuple[int, int] | type(Vec2d)):
+    if isinstance(pointa, tuple):
+        pointa = Vec2d(*pointa)
+    if isinstance(pointb, tuple):
+        pointb = Vec2d(*pointb)
     angle_degrees = (pointb - pointa).angle_degrees
-    angle_degrees = int(angle_degrees)
+    angle_degrees = round(angle_degrees)
     angle_degrees %= 360
-    cardinal_directions = {
-            "E":  range(337, 360) or range(23),
-            "NE": range(22, 68),
-            "N":  range(67, 113),
-            "NW": range(112, 158),
-            "W":  range(157, 203),
-            "SW": range(202, 248),
-            "S":  range(247, 293),
-            "SE": range(292, 338)
-    }
-    return next(
-            (
-                    direction
-                    for direction, angle_range in cardinal_directions.items()
-                    if angle_degrees in angle_range
-            ),
-            "Invalid angle",
-    )
+
+    return [direction for direction, angle_range in CARDINAL_DIRECTIONS.items() if angle_degrees in angle_range][0]
 
 
 
@@ -154,6 +152,7 @@ class BaseActor(AbstractEntity):
         self.skill_points = 0
         self.armor_class = 0
         self.inventory = None
+        self.vision = 200
         self._traveling = False
         self._initialize(role, race, background, alignment, age)
         self._is_turn = False
@@ -763,28 +762,40 @@ class BaseCharacter(BaseActor):
     def _is_in_sight(self, other):
         return self._get_distance(other) <= 20
     
-    def _is_in_distant_view(self, other):
+    def _is_in_view(self, other):
         return self._get_distance(other) <= 40
 
     def _see_item(self, item):
-        if self._is_in_sight(item):
-            if self._is_in_pickup_range(item):
-                self._nearby_items[item.name] = item
-                print(f'You see a {item.name} at your feet.')
-            else:
-                direction = get_direction(Vec2d(self.position[0], self.position[1]), Vec2d(item.position[0], item.position[1]))
-                print(f'You see a {item.name} nearby. ({direction})')
-        elif self._is_in_distant_view(item):
-            direction = get_direction(Vec2d(self.position[0], self.position[1]), Vec2d(item.position[0], item.position[1]))
-            print(f'You see an object some distance to the {direction}')
+        direction = get_direction(item.position, self.position)
+        if self._is_in_pickup_range(item):
+            self._nearby_items[item.name] = item
+            print(f'You see {repr(item)} at your feet.')
+        else:
+            print(f'You see {repr(item)} to the {direction}')
 
     def look_around(self):
-        for item in self.grid.armory._grid_instances.values():
-            self._see_item(item)
-        for item in self.grid.goods._grid_instances.values():
-            self._see_item(item)
-        for cell in self.grid.get_area(self.cell_name, 20):
+        vision = self.vision//5
+        for cell in self.grid.get_area(self.cell_name, vision):
+            if cell.entry_object['items'] is not None:
+                self._nearby_items |= cell.entry_object['items']
             if cell.entry_unit['players'] is not None:
                 for player in cell.entry_unit['players'].values():
                     if player.parent != self:
                         print(f'You see a {player.parent._race.title()} {player.parent._role.title()} nearby.')
+
+        directions = {
+            self.grid.get_direction(self.cell, item.cell)
+            for name, item in self._nearby_items.items()
+        }
+        if len(self._nearby_items) > 8 or len(directions) > 4:
+            print('There are several objects scattered around you,')
+        elif len(self._nearby_items) < 4:
+            for item in self._nearby_items.values():
+                self._see_item(item)
+
+
+        # for item in self.grid.armory._grid_instances.values():
+        #     item_count += 1 if self._is_in_sight(item) else 0
+        # for item in self.grid.goods._grid_instances.values():
+        #     item_
+        #     self._see_item(item)

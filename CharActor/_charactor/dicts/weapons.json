@@ -43,7 +43,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron dagger.",
+        "description": "A simple iron dagger",
         "quality": "COMMON",
         "value": [
             2,
@@ -79,7 +79,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A simple wooden greatclub.",
+        "description": "A simple wooden greatclub",
         "quality": "COMMON",
         "value": [
             2,
@@ -113,7 +113,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron handaxe.",
+        "description": "A simple iron handaxe",
         "quality": "COMMON",
         "value": [
             5,
@@ -148,7 +148,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron javelin.",
+        "description": "A simple iron javelin",
         "quality": "COMMON",
         "value": [
             5,
@@ -183,7 +183,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron light hammer.",
+        "description": "A simple iron light hammer",
         "quality": "COMMON",
         "value": [
             2,
@@ -218,7 +218,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron mace.",
+        "description": "A simple iron mace",
         "quality": "COMMON",
         "value": [
             5,
@@ -252,7 +252,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A simple wooden quarterstaff.",
+        "description": "A simple wooden quarterstaff",
         "quality": "COMMON",
         "value": [
             2,
@@ -286,7 +286,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron sickle.",
+        "description": "A simple iron sickle",
         "quality": "COMMON",
         "value": [
             1,
@@ -320,7 +320,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron spear.",
+        "description": "A simple iron spear",
         "quality": "COMMON",
         "value": [
             1,
@@ -355,7 +355,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron halberd.",
+        "description": "A simple iron halberd",
         "quality": "COMMON",
         "value": [
             20,
@@ -390,7 +390,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron lance.",
+        "description": "A simple iron lance",
         "quality": "COMMON",
         "value": [
             10,
@@ -425,7 +425,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron longsword.",
+        "description": "A simple iron longsword",
         "quality": "COMMON",
         "value": [
             15,
@@ -459,7 +459,7 @@
         ],
         "material": "STEEL",
         "mundane": true,
-        "description": "A slender sword with a sharp point.",
+        "description": "A slender sword with a sharp point",
         "quality": "COMMON",
         "value": [
             25,
@@ -493,7 +493,7 @@
         ],
         "material": "STEEL",
         "mundane": true,
-        "description": "A curved sword with a single-edged blade.",
+        "description": "A curved sword with a single-edged blade",
         "quality": "COMMON",
         "value": [
             25,
@@ -528,7 +528,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron shortsword.",
+        "description": "A simple iron shortsword",
         "quality": "COMMON",
         "value": [
             10,
@@ -562,7 +562,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron trident.",
+        "description": "A simple iron trident",
         "quality": "COMMON",
         "value": [
             5,
@@ -596,7 +596,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron war pick.",
+        "description": "A simple iron war pick",
         "quality": "COMMON",
         "value": [
             5,
@@ -627,7 +627,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron warhammer.",
+        "description": "A simple iron warhammer",
         "quality": "COMMON",
         "value": [
             15,
@@ -660,7 +660,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple ironclad whip.",
+        "description": "A simple ironclad whip",
         "quality": "COMMON",
         "value": [
             2,
@@ -694,7 +694,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron battleaxe.",
+        "description": "A simple iron battleaxe",
         "quality": "COMMON",
         "value": [
             10,
@@ -727,7 +727,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron flail.",
+        "description": "A simple iron flail",
         "quality": "COMMON",
         "value": [
             10,
@@ -758,7 +758,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron glaive.",
+        "description": "A simple iron glaive",
         "quality": "COMMON",
         "value": [
             20,
@@ -793,7 +793,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron greataxe.",
+        "description": "A simple iron greataxe",
         "quality": "COMMON",
         "value": [
             30,
@@ -827,7 +827,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A simple iron greatsword.",
+        "description": "A simple iron greatsword",
         "quality": "COMMON",
         "value": [
             50,
@@ -861,7 +861,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A spiked ball mounted on a steel shaft.",
+        "description": "A spiked ball mounted on a steel shaft",
         "quality": "COMMON",
         "value": [
             15,
@@ -894,7 +894,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A simple wooden longbow.",
+        "description": "A simple wooden longbow",
         "quality": "COMMON",
         "value": [
             50,
@@ -929,7 +929,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A simple wooden shortbow.",
+        "description": "A simple wooden shortbow",
         "quality": "COMMON",
         "value": [
             25,
@@ -963,7 +963,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A lightweight, wooden crossbow.",
+        "description": "A lightweight, wooden crossbow",
         "quality": "COMMON",
         "value": [
             25,
@@ -998,7 +998,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A small crossbow meant to be fired using one hand.",
+        "description": "A small crossbow meant to be fired using one hand",
         "quality": "COMMON",
         "value": [
             75,
@@ -1068,7 +1068,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A stitched leather sling for propelling stones or shots.",
+        "description": "A stitched leather sling for propelling stones or shots",
         "quality": "COMMON",
         "value": [
             1,
@@ -1101,7 +1101,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A large, two-handed sword with a wide blade.",
+        "description": "A large, two-handed sword with a wide blade",
         "quality": "COMMON",
         "value": [
             75,
@@ -1135,7 +1135,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A short, curved sword with a wide blade.",
+        "description": "A short, curved sword with a wide blade",
         "quality": "COMMON",
         "value": [
             25,
@@ -1169,7 +1169,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A curved sword with a wide blade.",
+        "description": "A curved sword with a wide blade",
         "quality": "COMMON",
         "value": [
             20,
@@ -1202,7 +1202,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A curved, single-edged sword with a short blade.",
+        "description": "A curved, single-edged sword with a short blade",
         "quality": "COMMON",
         "value": [
             10,
@@ -1236,7 +1236,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A pair of short, curved blades.",
+        "description": "A pair of short, curved blades",
         "quality": "COMMON",
         "value": [
             2,
@@ -1270,7 +1270,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A disc-shaped weapon with a sharp edge.",
+        "description": "A disc-shaped weapon with a sharp edge",
         "quality": "COMMON",
         "value": [
             2,
@@ -1304,7 +1304,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A large, studded weight attached to a long chain.",
+        "description": "A large, studded weight attached to a long chain",
         "quality": "COMMON",
         "value": [
             10,
@@ -1339,7 +1339,7 @@
         ],
         "material": "IRON",
         "mundane": true,
-        "description": "A pair of leather gloves with metal spikes.",
+        "description": "A pair of leather gloves with metal spikes",
         "quality": "COMMON",
         "value": [
             2,
@@ -1373,7 +1373,7 @@
         ],
         "material": "BONE",
         "mundane": true,
-        "description": "A strong sword crafted from the bones and scales of a dragon.",
+        "description": "A strong sword crafted from the bones and scales of a dragon",
         "quality": "RARE",
         "value": [
             100,
@@ -1406,7 +1406,7 @@
         ],
         "material": "GOLD",
         "mundane": false,
-        "description": "A beautiful, golden sword which sings in battle and boosts the morale of its wielder.",
+        "description": "A beautiful, golden sword which sings in battle and boosts the morale of its wielder",
         "quality": "RARE",
         "value": [
             100,
@@ -1439,7 +1439,7 @@
         ],
         "material": "IRON",
         "mundane": false,
-        "description": "A sword which burns with the power of the sun.",
+        "description": "A sword which burns with the power of the sun",
         "quality": "RARE",
         "value": [
             100,
@@ -1472,7 +1472,7 @@
         ],
         "material": "IRON",
         "mundane": false,
-        "description": "A sword which burns with the power of the moon.",
+        "description": "A sword which burns with the power of the moon",
         "quality": "RARE",
         "value": [
             100,

@@ -10,7 +10,7 @@
         "material": "GOLD",
         "consumable": true,
         "mundane": true,
-        "description": "A chunk of gold ore.",
+        "description": "A chunk of gold ore",
         "quality": "COMMON",
         "value": [
             5,
@@ -32,7 +32,7 @@
         "material": "IRON",
         "consumable": true,
         "mundane": true,
-        "description": "A chunk of iron ore.",
+        "description": "A chunk of iron ore",
         "quality": "COMMON",
         "value": [
             1,
@@ -54,7 +54,7 @@
         "material": "COPPER",
         "consumable": true,
         "mundane": true,
-        "description": "A chunk of copper ore.",
+        "description": "A chunk of copper ore",
         "quality": "COMMON",
         "value": [
             1,
@@ -76,7 +76,7 @@
         "material": "SILVER",
         "consumable": true,
         "mundane": true,
-        "description": "A chunk of silver ore.",
+        "description": "A chunk of silver ore",
         "quality": "COMMON",
         "value": [
             2,
@@ -98,7 +98,7 @@
         "material": "MITHRIL",
         "consumable": true,
         "mundane": true,
-        "description": "A chunk of mithril ore.",
+        "description": "A chunk of mithril ore",
         "quality": "COMMON",
         "value": [
             3,
@@ -120,7 +120,7 @@
         "material": "ADAMANTITE",
         "consumable": true,
         "mundane": true,
-        "description": "A chunk of adamantite ore.",
+        "description": "A chunk of adamantite ore",
         "quality": "COMMON",
         "value": [
             4,
@@ -142,7 +142,7 @@
         "material": "RUNITE",
         "consumable": true,
         "mundane": true,
-        "description": "A chunk of runite ore.",
+        "description": "A chunk of runite ore",
         "quality": "COMMON",
         "value": [
             5,
@@ -164,7 +164,7 @@
         "material": "COAL",
         "consumable": true,
         "mundane": true,
-        "description": "A chunk of coal.",
+        "description": "A chunk of coal",
         "quality": "COMMON",
         "value": [
             1,
@@ -186,7 +186,7 @@
         "material": "GOLD",
         "consumable": true,
         "mundane": true,
-        "description": "A bar of gold.",
+        "description": "A bar of gold",
         "quality": "COMMON",
         "value": [
             10,
@@ -208,7 +208,7 @@
         "material": "IRON",
         "consumable": true,
         "mundane": true,
-        "description": "A bar of iron.",
+        "description": "A bar of iron",
         "quality": "COMMON",
         "value": [
             2,
@@ -230,7 +230,7 @@
         "material": "COPPER",
         "consumable": true,
         "mundane": true,
-        "description": "A bar of copper.",
+        "description": "A bar of copper",
         "quality": "COMMON",
         "value": [
             2,
@@ -252,7 +252,7 @@
         "material": "SILVER",
         "consumable": true,
         "mundane": true,
-        "description": "A bar of silver.",
+        "description": "A bar of silver",
         "quality": "COMMON",
         "value": [
             4,
@@ -274,7 +274,7 @@
         "material": "MITHRIL",
         "consumable": true,
         "mundane": true,
-        "description": "A bar of mithril.",
+        "description": "A bar of mithril",
         "quality": "COMMON",
         "value": [
             6,
@@ -296,7 +296,7 @@
         "material": "ADAMANTITE",
         "consumable": true,
         "mundane": true,
-        "description": "A bar of adamantite.",
+        "description": "A bar of adamantite",
         "quality": "COMMON",
         "value": [
             8,
@@ -318,7 +318,7 @@
         "material": "RUNITE",
         "consumable": true,
         "mundane": true,
-        "description": "A bar of runite.",
+        "description": "A bar of runite",
         "quality": "COMMON",
         "value": [
             10,
@@ -340,7 +340,7 @@
         "material": "BRONZE",
         "consumable": true,
         "mundane": true,
-        "description": "A bar of bronze.",
+        "description": "A bar of bronze",
         "quality": "COMMON",
         "value": [
             1,
@@ -362,7 +362,7 @@
         "material": "STEEL",
         "consumable": true,
         "mundane": true,
-        "description": "A bar of steel.",
+        "description": "A bar of steel",
         "quality": "COMMON",
         "value": [
             3,
@@ -384,7 +384,7 @@
         "material": "OAK",
         "consumable": true,
         "mundane": true,
-        "description": "A log of oak.",
+        "description": "A log of oak",
         "quality": "COMMON",
         "value": [
             1,
@@ -406,7 +406,7 @@
         "material": "WILLOW",
         "consumable": true,
         "mundane": true,
-        "description": "A log of willow.",
+        "description": "A log of willow",
         "quality": "COMMON",
         "value": [
             2,
@@ -428,7 +428,7 @@
         "material": "MAPLE",
         "consumable": true,
         "mundane": true,
-        "description": "A log of maple.",
+        "description": "A log of maple",
         "quality": "COMMON",
         "value": [
             3,
@@ -450,7 +450,7 @@
         "material": "YEW",
         "consumable": true,
         "mundane": true,
-        "description": "A log of yew.",
+        "description": "A log of yew",
         "quality": "COMMON",
         "value": [
             4,
@@ -472,7 +472,7 @@
         "material": "FLAX",
         "consumable": true,
         "mundane": true,
-        "description": "A seed of flax.",
+        "description": "A seed of flax",
         "quality": "COMMON",
         "value": [
             1,
@@ -494,7 +494,7 @@
         "material": "FLAX",
         "consumable": true,
         "mundane": true,
-        "description": "A bundle of flax.",
+        "description": "A bundle of flax",
         "quality": "COMMON",
         "value": [
             1,
@@ -516,7 +516,7 @@
         "material": "COTTON",
         "consumable": true,
         "mundane": true,
-        "description": "A seed of cotton.",
+        "description": "A seed of cotton",
         "quality": "COMMON",
         "value": [
             2,
@@ -538,7 +538,7 @@
         "material": "COTTON",
         "consumable": true,
         "mundane": true,
-        "description": "A bundle of cotton.",
+        "description": "A bundle of cotton",
         "quality": "COMMON",
         "value": [
             2,
@@ -560,7 +560,7 @@
         "material": "WOOL",
         "consumable": true,
         "mundane": true,
-        "description": "A bundle of wool.",
+        "description": "A bundle of wool",
         "quality": "COMMON",
         "value": [
             3,
@@ -582,7 +582,7 @@
         "material": "SILK",
         "consumable": true,
         "mundane": true,
-        "description": "A bundle of silk.",
+        "description": "A bundle of silk",
         "quality": "COMMON",
         "value": [
             4,
@@ -604,7 +604,7 @@
         "material": "LEATHER",
         "consumable": true,
         "mundane": true,
-        "description": "A bundle of leather.",
+        "description": "A bundle of leather",
         "quality": "COMMON",
         "value": [
             5,

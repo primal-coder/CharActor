@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='CharActor',
-    version='0.6.3',
+    version='0.7.3',
     description='A module for creating and managing rpg characters.',
     long_description=long_description,
     long_description_content_type='text/markdown',

@@ -9,7 +9,7 @@
         ],
         "material": "GOLD",
         "mundane": true,
-        "description": "A gold coin.",
+        "description": "A gold coin",
         "quality": "COMMON",
         "value": [
             1,
@@ -30,7 +30,7 @@
         ],
         "material": "SILVER",
         "mundane": true,
-        "description": "A silver coin.",
+        "description": "A silver coin",
         "quality": "COMMON",
         "value": [
             1,
@@ -51,7 +51,7 @@
         ],
         "material": "COPPER",
         "mundane": true,
-        "description": "A copper coin.",
+        "description": "A copper coin",
         "quality": "COMMON",
         "value": [
             1,
@@ -72,7 +72,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A torch for lighting dark areas.",
+        "description": "A torch for lighting dark areas",
         "quality": "COMMON",
         "value": [
             1,
@@ -92,7 +92,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A long, durable rope used for various purposes.",
+        "description": "A long, durable rope used for various purposes",
         "quality": "COMMON",
         "value": [
             1,
@@ -112,7 +112,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A soft and warm blanket for comfort.",
+        "description": "A soft and warm blanket for comfort",
         "quality": "COMMON",
         "value": [
             1,
@@ -132,7 +132,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A small lantern with a handle, used to illuminate dark areas.",
+        "description": "A small lantern with a handle, used to illuminate dark areas",
         "quality": "COMMON",
         "value": [
             5,
@@ -152,7 +152,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A container made from animal hide to hold water for hydration.",
+        "description": "A container made from animal hide to hold water for hydration",
         "quality": "COMMON",
         "value": [
             5,
@@ -172,7 +172,7 @@
         ],
         "material": "GLASS",
         "mundane": true,
-        "description": "A small bottle filled with ink for writing and drawing.",
+        "description": "A small bottle filled with ink for writing and drawing",
         "quality": "COMMON",
         "value": [
             2,
@@ -192,7 +192,7 @@
         ],
         "material": "FEATHER",
         "mundane": true,
-        "description": "A feather used as a writing instrument.",
+        "description": "A feather used as a writing instrument",
         "quality": "COMMON",
         "value": [
             1,
@@ -212,7 +212,7 @@
         ],
         "material": "GLASS",
         "mundane": true,
-        "description": "A clear glass bottle used for storing liquids.",
+        "description": "A clear glass bottle used for storing liquids",
         "quality": "COMMON",
         "value": [
             1,
@@ -232,7 +232,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A sturdy metal pot for cooking food over a fire.",
+        "description": "A sturdy metal pot for cooking food over a fire",
         "quality": "COMMON",
         "value": [
             5,
@@ -252,7 +252,7 @@
         ],
         "material": "FABRIC",
         "mundane": true,
-        "description": "A portable shelter made of fabric and poles for camping.",
+        "description": "A portable shelter made of fabric and poles for camping",
         "quality": "COMMON",
         "value": [
             1,
@@ -272,7 +272,7 @@
         ],
         "material": "PAPER",
         "mundane": true,
-        "description": "A detailed map of the local region for navigation.",
+        "description": "A detailed map of the local region for navigation",
         "quality": "COMMON",
         "value": [
             5,
@@ -292,7 +292,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A net used for catching fish and other aquatic creatures.",
+        "description": "A net used for catching fish and other aquatic creatures",
         "quality": "COMMON",
         "value": [
             5,
@@ -312,7 +312,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A simple lock with a matching key for securing belongings.",
+        "description": "A simple lock with a matching key for securing belongings",
         "quality": "COMMON",
         "value": [
             1,
@@ -332,7 +332,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A piece of chalk used for writing on various surfaces.",
+        "description": "A piece of chalk used for writing on various surfaces",
         "quality": "COMMON",
         "value": [
             1,
@@ -352,7 +352,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A small candle for providing light.",
+        "description": "A small candle for providing light",
         "quality": "COMMON",
         "value": [
             1,
@@ -372,7 +372,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A navigational instrument used for finding direction.",
+        "description": "A navigational instrument used for finding direction",
         "quality": "COMMON",
         "value": [
             5,
@@ -392,7 +392,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "Ropes, harnesses, and pitons for aiding in climbing.",
+        "description": "Ropes, harnesses, and pitons for aiding in climbing",
         "quality": "COMMON",
         "value": [
             5,
@@ -412,7 +412,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A sturdy wooden bucket for carrying liquids or small items.",
+        "description": "A sturdy wooden bucket for carrying liquids or small items",
         "quality": "COMMON",
         "value": [
             2,
@@ -432,7 +432,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A bar of soap used for personal hygiene and cleaning.",
+        "description": "A bar of soap used for personal hygiene and cleaning",
         "quality": "COMMON",
         "value": [
             5,
@@ -452,7 +452,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A small metal chisel for carving and shaping materials.",
+        "description": "A small metal chisel for carving and shaping materials",
         "quality": "COMMON",
         "value": [
             2,
@@ -472,7 +472,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A sturdy metal spade for digging and excavating.",
+        "description": "A sturdy metal spade for digging and excavating",
         "quality": "COMMON",
         "value": [
             5,
@@ -492,7 +492,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A fishing rod used for recreational fishing.",
+        "description": "A fishing rod used for recreational fishing",
         "quality": "COMMON",
         "value": [
             5,
@@ -512,7 +512,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A loaf of bread, a staple food for many.",
+        "description": "A loaf of bread, a staple food for many",
         "quality": "COMMON",
         "value": [
             5,
@@ -532,7 +532,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A set of tools used for picking locks and opening secured doors.",
+        "description": "A set of tools used for picking locks and opening secured doors",
         "quality": "COMMON",
         "value": [
             5,
@@ -552,7 +552,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A sturdy wooden wagon for transporting goods or people.",
+        "description": "A sturdy wooden wagon for transporting goods or people",
         "quality": "COMMON",
         "value": [
             20,
@@ -572,7 +572,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "Metal pegs used to secure tents to the ground.",
+        "description": "Metal pegs used to secure tents to the ground",
         "quality": "COMMON",
         "value": [
             2,
@@ -592,7 +592,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A bag of nutritious feed for horses.",
+        "description": "A bag of nutritious feed for horses",
         "quality": "COMMON",
         "value": [
             5,
@@ -612,7 +612,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A wooden mallet used for driving in stakes and other heavy tasks.",
+        "description": "A wooden mallet used for driving in stakes and other heavy tasks",
         "quality": "COMMON",
         "value": [
             5,
@@ -632,7 +632,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A long line used for hanging and drying clothes.",
+        "description": "A long line used for hanging and drying clothes",
         "quality": "COMMON",
         "value": [
             2,
@@ -652,7 +652,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A pot made from clay for storing and cooking food.",
+        "description": "A pot made from clay for storing and cooking food",
         "quality": "COMMON",
         "value": [
             2,
@@ -672,7 +672,7 @@
         ],
         "material": "FABRIC",
         "mundane": true,
-        "description": "A fabric hammock for resting or sleeping.",
+        "description": "A fabric hammock for resting or sleeping",
         "quality": "COMMON",
         "value": [
             5,
@@ -692,7 +692,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A shallow metal pan for frying and cooking food.",
+        "description": "A shallow metal pan for frying and cooking food",
         "quality": "COMMON",
         "value": [
             2,
@@ -712,7 +712,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A small metal box with a lock for securing valuable items.",
+        "description": "A small metal box with a lock for securing valuable items",
         "quality": "COMMON",
         "value": [
             5,
@@ -732,7 +732,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A simple wooden bowl for holding food or liquids.",
+        "description": "A simple wooden bowl for holding food or liquids",
         "quality": "COMMON",
         "value": [
             1,
@@ -752,7 +752,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A sturdy mug for drinking beverages.",
+        "description": "A sturdy mug for drinking beverages",
         "quality": "COMMON",
         "value": [
             2,
@@ -772,7 +772,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A basic wooden spoon for cooking and stirring.",
+        "description": "A basic wooden spoon for cooking and stirring",
         "quality": "COMMON",
         "value": [
             1,
@@ -792,7 +792,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A simple leather belt for holding garments in place.",
+        "description": "A simple leather belt for holding garments in place",
         "quality": "COMMON",
         "value": [
             2,
@@ -812,7 +812,7 @@
         ],
         "material": "PAPER",
         "mundane": true,
-        "description": "An empty notebook for writing and note-taking.",
+        "description": "An empty notebook for writing and note-taking",
         "quality": "COMMON",
         "value": [
             5,
@@ -832,7 +832,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A small brush used for cleaning or applying paint.",
+        "description": "A small brush used for cleaning or applying paint",
         "quality": "COMMON",
         "value": [
             1,
@@ -852,7 +852,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A kit containing needles, thread, and small sewing tools.",
+        "description": "A kit containing needles, thread, and small sewing tools",
         "quality": "COMMON",
         "value": [
             5,
@@ -872,7 +872,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A small watch with a chain for timekeeping.",
+        "description": "A small watch with a chain for timekeeping",
         "quality": "COMMON",
         "value": [
             5,
@@ -892,7 +892,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A small cork used for sealing bottles or containers.",
+        "description": "A small cork used for sealing bottles or containers",
         "quality": "COMMON",
         "value": [
             1,
@@ -912,7 +912,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A small broom for sweeping up dirt and debris.",
+        "description": "A small broom for sweeping up dirt and debris",
         "quality": "COMMON",
         "value": [
             2,
@@ -932,7 +932,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A set of dice for playing games of chance.",
+        "description": "A set of dice for playing games of chance",
         "quality": "COMMON",
         "value": [
             2,
@@ -952,7 +952,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A set of flint and steel for starting fires.",
+        "description": "A set of flint and steel for starting fires",
         "quality": "COMMON",
         "value": [
             1,
@@ -972,7 +972,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A collection of marbles for playing various games.",
+        "description": "A collection of marbles for playing various games",
         "quality": "COMMON",
         "value": [
             5,
@@ -992,7 +992,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A small metal bell with a handle.",
+        "description": "A small metal bell with a handle",
         "quality": "COMMON",
         "value": [
             2,
@@ -1012,7 +1012,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A container of bait used for fishing.",
+        "description": "A container of bait used for fishing",
         "quality": "COMMON",
         "value": [
             1,
@@ -1032,7 +1032,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A pair of gloves for protecting hands during various tasks.",
+        "description": "A pair of gloves for protecting hands during various tasks",
         "quality": "COMMON",
         "value": [
             2,
@@ -1052,7 +1052,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A large board coated with chalk, used for writing messages or drawings.",
+        "description": "A large board coated with chalk, used for writing messages or drawings",
         "quality": "COMMON",
         "value": [
             5,
@@ -1072,7 +1072,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A bowl filled with various fresh fruits.",
+        "description": "A bowl filled with various fresh fruits",
         "quality": "COMMON",
         "value": [
             5,
@@ -1092,7 +1092,7 @@
         ],
         "material": "CERAMIC",
         "mundane": true,
-        "description": "A small teapot for steeping and serving tea.",
+        "description": "A small teapot for steeping and serving tea",
         "quality": "COMMON",
         "value": [
             5,
@@ -1112,7 +1112,7 @@
         ],
         "material": "GLASS",
         "mundane": true,
-        "description": "A small mirror for personal grooming and reflection.",
+        "description": "A small mirror for personal grooming and reflection",
         "quality": "COMMON",
         "value": [
             5,
@@ -1132,7 +1132,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A small pouch for storing spell components.",
+        "description": "A small pouch for storing spell components",
         "quality": "COMMON",
         "value": [
             25,
@@ -1152,7 +1152,7 @@
         ],
         "material": "WOOD",
         "mundane": true,
-        "description": "A stringed instrument with a rounded body and a flat neck.",
+        "description": "A stringed instrument with a rounded body and a flat neck",
         "quality": "COMMON",
         "value": [
             35,
@@ -1172,7 +1172,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A sturdy backpack for carrying belongings on adventures.",
+        "description": "A sturdy backpack for carrying belongings on adventures",
         "quality": "COMMON",
         "value": [
             2,
@@ -1192,7 +1192,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "Blessed water used for warding off undead and fiends.",
+        "description": "Blessed water used for warding off undead and fiends",
         "quality": "COMMON",
         "value": [
             25,
@@ -1212,7 +1212,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A natural remedy for curing minor ailments and illnesses.",
+        "description": "A natural remedy for curing minor ailments and illnesses",
         "quality": "COMMON",
         "value": [
             5,
@@ -1232,7 +1232,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A small box containing flint, steel, and tinder for starting fires.",
+        "description": "A small box containing flint, steel, and tinder for starting fires",
         "quality": "COMMON",
         "value": [
             5,
@@ -1252,7 +1252,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A mechanical trap used for capturing animals.",
+        "description": "A mechanical trap used for capturing animals",
         "quality": "COMMON",
         "value": [
             5,
@@ -1272,7 +1272,7 @@
         ],
         "material": "GLASS",
         "mundane": true,
-        "description": "A handheld telescope for viewing distant objects.",
+        "description": "A handheld telescope for viewing distant objects",
         "quality": "COMMON",
         "value": [
             1,
@@ -1292,7 +1292,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A set of pots, pans, and utensils for cooking meals.",
+        "description": "A set of pots, pans, and utensils for cooking meals",
         "quality": "COMMON",
         "value": [
             5,
@@ -1312,7 +1312,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A sponge-like eraser used for cleaning chalkboards.",
+        "description": "A sponge-like eraser used for cleaning chalkboards",
         "quality": "COMMON",
         "value": [
             2,
@@ -1332,7 +1332,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A bait used to attract specific animals for hunting or taming.",
+        "description": "A bait used to attract specific animals for hunting or taming",
         "quality": "COMMON",
         "value": [
             2,
@@ -1352,7 +1352,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A woven basket for carrying items.",
+        "description": "A woven basket for carrying items",
         "quality": "COMMON",
         "value": [
             4,
@@ -1372,7 +1372,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A religious symbol used for casting divine spells.",
+        "description": "A religious symbol used for casting divine spells",
         "quality": "COMMON",
         "value": [
             5,
@@ -1392,7 +1392,7 @@
         ],
         "material": "PAPER",
         "mundane": true,
-        "description": "A book containing prayers and religious teachings.",
+        "description": "A book containing prayers and religious teachings",
         "quality": "COMMON",
         "value": [
             25,
@@ -1412,7 +1412,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A stick of incense used for religious ceremonies and rituals.",
+        "description": "A stick of incense used for religious ceremonies and rituals",
         "quality": "COMMON",
         "value": [
             1,
@@ -1432,7 +1432,7 @@
         ],
         "material": "FABRIC",
         "mundane": true,
-        "description": "A set of religious garments worn by priests and clerics.",
+        "description": "A set of religious garments worn by priests and clerics",
         "quality": "COMMON",
         "value": [
             25,
@@ -1452,7 +1452,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A kit containing makeup, wigs, and other items for disguising oneself.",
+        "description": "A kit containing makeup, wigs, and other items for disguising oneself",
         "quality": "COMMON",
         "value": [
             25,
@@ -1472,7 +1472,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A kit containing inks, papers, and other items for forging documents.",
+        "description": "A kit containing inks, papers, and other items for forging documents",
         "quality": "COMMON",
         "value": [
             15,
@@ -1492,7 +1492,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A set of dice with weighted sides for cheating at games of chance.",
+        "description": "A set of dice with weighted sides for cheating at games of chance",
         "quality": "COMMON",
         "value": [
             5,
@@ -1512,7 +1512,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A set of playing cards with markings for cheating at games of chance.",
+        "description": "A set of playing cards with markings for cheating at games of chance",
         "quality": "COMMON",
         "value": [
             5,
@@ -1532,7 +1532,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A fake signet ring used for forging documents and impersonating nobles.",
+        "description": "A fake signet ring used for forging documents and impersonating nobles",
         "quality": "COMMON",
         "value": [
             5,
@@ -1552,7 +1552,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A set of pieces and a board for playing chess.",
+        "description": "A set of pieces and a board for playing chess",
         "quality": "COMMON",
         "value": [
             1,
@@ -1572,7 +1572,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A set of tools used for picking locks and opening secured doors.",
+        "description": "A set of tools used for picking locks and opening secured doors",
         "quality": "COMMON",
         "value": [
             25,
@@ -1592,7 +1592,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A metal bar used for prying open doors and containers.",
+        "description": "A metal bar used for prying open doors and containers",
         "quality": "COMMON",
         "value": [
             2,
@@ -1612,7 +1612,7 @@
         ],
         "material": "PAPER",
         "mundane": true,
-        "description": "A letter expressing love and affection for another person.",
+        "description": "A letter expressing love and affection for another person",
         "quality": "COMMON",
         "value": [
             1,
@@ -1632,7 +1632,7 @@
         ],
         "material": "FABRIC",
         "mundane": true,
-        "description": "A costume worn by actors and performers during plays and performances.",
+        "description": "A costume worn by actors and performers during plays and performances",
         "quality": "COMMON",
         "value": [
             15,
@@ -1652,7 +1652,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A sturdy shovel for digging and excavating.",
+        "description": "A sturdy shovel for digging and excavating",
         "quality": "COMMON",
         "value": [
             2,
@@ -1672,7 +1672,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A pot made from iron for storing and cooking food.",
+        "description": "A pot made from iron for storing and cooking food",
         "quality": "COMMON",
         "value": [
             2,
@@ -1692,7 +1692,7 @@
         ],
         "material": "PAPER",
         "mundane": true,
-        "description": "A letter of introduction from a guild.",
+        "description": "A letter of introduction from a guild",
         "quality": "COMMON",
         "value": [
             5,
@@ -1712,7 +1712,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A kit containing various herbs and tools for creating herbal remedies.",
+        "description": "A kit containing various herbs and tools for creating herbal remedies",
         "quality": "COMMON",
         "value": [
             5,
@@ -1732,7 +1732,7 @@
         ],
         "material": "FABRIC",
         "mundane": true,
-        "description": "A thick blanket for keeping warm in cold climates.",
+        "description": "A thick blanket for keeping warm in cold climates",
         "quality": "COMMON",
         "value": [
             5,
@@ -1752,7 +1752,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A ring bearing the seal of a noble or organization.",
+        "description": "A ring bearing the seal of a noble or organization",
         "quality": "COMMON",
         "value": [
             5,
@@ -1772,7 +1772,7 @@
         ],
         "material": "PAPER",
         "mundane": true,
-        "description": "A scroll containing the lineage of a noble family.",
+        "description": "A scroll containing the lineage of a noble family",
         "quality": "COMMON",
         "value": [
             25,
@@ -1792,7 +1792,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A necklace made from the claws of a bugbear.",
+        "description": "A necklace made from the claws of a bugbear",
         "quality": "COMMON",
         "value": [
             5,
@@ -1812,7 +1812,7 @@
         ],
         "material": "PAPER",
         "mundane": true,
-        "description": "A profundity produced by an old friend, now deceased. You've never been able to solve it.",
+        "description": "A profundity produced by an old friend, now deceased. You've never been able to solve it",
         "quality": "COMMON",
         "value": [
             5,
@@ -1832,7 +1832,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A 50 ft. length of rope made from silk.",
+        "description": "A 50 ft. length of rope made from silk",
         "quality": "COMMON",
         "value": [
             10,
@@ -1852,7 +1852,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A rabbit's foot used for good luck.",
+        "description": "A rabbit's foot used for good luck",
         "quality": "COMMON",
         "value": [
             1,
@@ -1872,7 +1872,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A badge or insignia worn by a member of a military organization.",
+        "description": "A badge or insignia worn by a member of a military organization",
         "quality": "COMMON",
         "value": [
             5,
@@ -1892,7 +1892,7 @@
         ],
         "material": "FABRIC",
         "mundane": true,
-        "description": "A banner bearing the symbol of an enemy organization.",
+        "description": "A banner bearing the symbol of an enemy organization",
         "quality": "COMMON",
         "value": [
             5,
@@ -1912,7 +1912,7 @@
         ],
         "material": "PAPER",
         "mundane": true,
-        "description": "A map of a city or settlement.",
+        "description": "A map of a city or settlement",
         "quality": "COMMON",
         "value": [
             5,
@@ -1932,7 +1932,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A token bearing the symbol of a noble family.",
+        "description": "A token bearing the symbol of a noble family",
         "quality": "COMMON",
         "value": [
             5,
@@ -1952,7 +1952,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A pet mouse kept for companionship.",
+        "description": "A pet mouse kept for companionship",
         "quality": "COMMON",
         "value": [
             1,
@@ -1992,7 +1992,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "Dried fruits, nuts, and hard bread, providing sustenance for travelers.",
+        "description": "Dried fruits, nuts, and hard bread, providing sustenance for travelers",
         "quality": "COMMON",
         "value": [
             5,
@@ -2012,7 +2012,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A small scale used by merchants to weigh goods.",
+        "description": "A small scale used by merchants to weigh goods",
         "quality": "COMMON",
         "value": [
             5,
@@ -2032,7 +2032,7 @@
         ],
         "material": "FABRIC",
         "mundane": true,
-        "description": "A simple outfit suitable for long journeys and travel.",
+        "description": "A simple outfit suitable for long journeys and travel",
         "quality": "COMMON",
         "value": [
             5,
@@ -2052,7 +2052,7 @@
         ],
         "material": "METAL",
         "mundane": true,
-        "description": "A specialized kit for aiding in climbing and mountaineering.",
+        "description": "A specialized kit for aiding in climbing and mountaineering",
         "quality": "COMMON",
         "value": [
             5,
@@ -2072,7 +2072,7 @@
         ],
         "material": "OTHER",
         "mundane": true,
-        "description": "A set of tools used for navigation and mapmaking.",
+        "description": "A set of tools used for navigation and mapmaking",
         "quality": "COMMON",
         "value": [
             25,

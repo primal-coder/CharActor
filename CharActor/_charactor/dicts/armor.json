@@ -9,7 +9,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A basic leather chest-piece.",
+        "description": "A leather chest-piec",
         "quality": "COMMON",
         "value": [
             5,
@@ -28,7 +28,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A basic leather helmet.",
+        "description": "A leather helmet",
         "quality": "COMMON",
         "value": [
             5,
@@ -50,7 +50,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A basic pair of leather gauntlets.",
+        "description": "A single leather gauntlet",
         "quality": "COMMON",
         "value": [
             5,
@@ -69,7 +69,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A basic pair of leather boots.",
+        "description": "A leather boot",
         "quality": "COMMON",
         "value": [
             5,
@@ -88,7 +88,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A basic pair of leather leggings.",
+        "description": "A pair of leather leggings",
         "quality": "COMMON",
         "value": [
             5,
@@ -110,7 +110,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A basic pair of leather bracers.",
+        "description": "A leather bracer",
         "quality": "COMMON",
         "value": [
             5,
@@ -129,7 +129,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A basic leather belt.",
+        "description": "A leather belt",
         "quality": "COMMON",
         "value": [
             5,
@@ -151,7 +151,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A basic leather pauldron.",
+        "description": "A leather pauldron",
         "quality": "COMMON",
         "value": [
             5,
@@ -170,7 +170,7 @@
         ],
         "material": "CHAINMAIL",
         "mundane": true,
-        "description": "A sturdy chainmail chest-piece.",
+        "description": "A chainmail chest-piece",
         "quality": "COMMON",
         "value": [
             25,
@@ -189,7 +189,7 @@
         ],
         "material": "CHAINMAIL",
         "mundane": true,
-        "description": "A chainmail coif to protect the head.",
+        "description": "A chainmail coif",
         "quality": "COMMON",
         "value": [
             20,
@@ -211,7 +211,7 @@
         ],
         "material": "CHAINMAIL",
         "mundane": true,
-        "description": "A pair of chainmail gauntlets for the hands.",
+        "description": "A pair of chainmail gauntlets for the hands",
         "quality": "COMMON",
         "value": [
             18,
@@ -230,7 +230,7 @@
         ],
         "material": "CHAINMAIL",
         "mundane": true,
-        "description": "Sturdy chainmail boots for the feet.",
+        "description": "Sturdy chainmail boots for the feet",
         "quality": "COMMON",
         "value": [
             20,
@@ -249,7 +249,7 @@
         ],
         "material": "CHAINMAIL",
         "mundane": true,
-        "description": "Chainmail leggings for added protection.",
+        "description": "Chainmail leggings for added protection",
         "quality": "COMMON",
         "value": [
             22,
@@ -271,7 +271,7 @@
         ],
         "material": "CHAINMAIL",
         "mundane": true,
-        "description": "Chainmail bracers for the wrists.",
+        "description": "Chainmail bracers for the wrists",
         "quality": "COMMON",
         "value": [
             15,
@@ -290,7 +290,7 @@
         ],
         "material": "CHAINMAIL",
         "mundane": true,
-        "description": "A chainmail belt for extra protection.",
+        "description": "A chainmail belt for extra protection",
         "quality": "COMMON",
         "value": [
             18,
@@ -312,7 +312,7 @@
         ],
         "material": "CHAINMAIL",
         "mundane": true,
-        "description": "A chainmail pauldron to shield the shoulders.",
+        "description": "A chainmail pauldron to shield the shoulders",
         "quality": "COMMON",
         "value": [
             20,
@@ -331,7 +331,7 @@
         ],
         "material": "PLATE MAIL",
         "mundane": true,
-        "description": "A formidable suit of plate mail armor.",
+        "description": "A formidable suit of plate mail armor",
         "quality": "COMMON",
         "value": [
             50,
@@ -350,7 +350,7 @@
         ],
         "material": "PLATE MAIL",
         "mundane": true,
-        "description": "A sturdy plate helmet for head protection.",
+        "description": "A sturdy plate helmet for head protection",
         "quality": "COMMON",
         "value": [
             40,
@@ -372,7 +372,7 @@
         ],
         "material": "PLATE MAIL",
         "mundane": true,
-        "description": "Durable plate gauntlets for hand defense.",
+        "description": "Durable plate gauntlets for hand defense",
         "quality": "COMMON",
         "value": [
             35,
@@ -391,7 +391,7 @@
         ],
         "material": "PLATE MAIL",
         "mundane": true,
-        "description": "Heavy plate greaves to protect the legs.",
+        "description": "Heavy plate greaves to protect the legs",
         "quality": "COMMON",
         "value": [
             45,
@@ -410,7 +410,7 @@
         ],
         "material": "PLATE MAIL",
         "mundane": true,
-        "description": "Sturdy plate sabatons for foot defense.",
+        "description": "Sturdy plate sabatons for foot defense",
         "quality": "COMMON",
         "value": [
             40,
@@ -432,7 +432,7 @@
         ],
         "material": "PLATE MAIL",
         "mundane": true,
-        "description": "Plate vambraces for added wrist protection.",
+        "description": "Plate vambraces for added wrist protection",
         "quality": "COMMON",
         "value": [
             30,
@@ -451,7 +451,7 @@
         ],
         "material": "PLATE MAIL",
         "mundane": true,
-        "description": "A strong plate belt for waist defense.",
+        "description": "A strong plate belt for waist defense",
         "quality": "COMMON",
         "value": [
             35,
@@ -473,7 +473,7 @@
         ],
         "material": "PLATE MAIL",
         "mundane": true,
-        "description": "Plate pauldrons to shield the shoulders effectively.",
+        "description": "Plate pauldrons to shield the shoulders effectively",
         "quality": "COMMON",
         "value": [
             40,
@@ -492,7 +492,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A light leather chestpiece for basic protection.",
+        "description": "A light leather chestpiece for protection",
         "quality": "COMMON",
         "value": [
             10,
@@ -511,7 +511,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A light leather helmet for basic head protection.",
+        "description": "A light leather helmet for head protection",
         "quality": "COMMON",
         "value": [
             8,
@@ -533,7 +533,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "Light leather gauntlets for basic hand defense.",
+        "description": "Light leather gauntlets for hand defense",
         "quality": "COMMON",
         "value": [
             7,
@@ -552,7 +552,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "Light leather greaves to protect the legs.",
+        "description": "Light leather greaves to protect the legs",
         "quality": "COMMON",
         "value": [
             9,
@@ -571,7 +571,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "Light leather sabatons for basic foot defense.",
+        "description": "Light leather sabatons for foot defense",
         "quality": "COMMON",
         "value": [
             8,
@@ -593,7 +593,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "Light leather vambraces for basic wrist protection.",
+        "description": "Light leather vambraces for wrist protection",
         "quality": "COMMON",
         "value": [
             6,
@@ -612,7 +612,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "A light leather belt for basic waist defense.",
+        "description": "A light leather belt for waist defense",
         "quality": "COMMON",
         "value": [
             7,
@@ -634,7 +634,7 @@
         ],
         "material": "LEATHER",
         "mundane": true,
-        "description": "Light leather pauldrons to shield the shoulders effectively.",
+        "description": "Light leather pauldrons to shield the shoulders effectively",
         "quality": "COMMON",
         "value": [
             8,
@@ -653,7 +653,7 @@
         ],
         "material": "BURLAP",
         "mundane": true,
-        "description": "A simple burlap tunic.",
+        "description": "A simple burlap tunic",
         "quality": "COMMON",
         "value": [
             5,
@@ -672,7 +672,7 @@
         ],
         "material": "CLOTH",
         "mundane": true,
-        "description": "A simple cloth cap.",
+        "description": "A simple cloth cap",
         "quality": "COMMON",
         "value": [
             4,
@@ -694,7 +694,7 @@
         ],
         "material": "CLOTH",
         "mundane": true,
-        "description": "Simple cloth gloves.",
+        "description": "Simple cloth gloves",
         "quality": "COMMON",
         "value": [
             3,
@@ -713,7 +713,7 @@
         ],
         "material": "SCALE",
         "mundane": true,
-        "description": "A scaled chest-piece.",
+        "description": "A scaled chest-piece",
         "quality": "COMMON",
         "value": [
             15,
@@ -732,7 +732,7 @@
         ],
         "material": "SCALE",
         "mundane": true,
-        "description": "A scaled helmet.",
+        "description": "A scaled helmet",
         "quality": "COMMON",
         "value": [
             12,
@@ -754,7 +754,7 @@
         ],
         "material": "SCALE",
         "mundane": true,
-        "description": "A pair of scaled gauntlets.",
+        "description": "A pair of scaled gauntlets",
         "quality": "COMMON",
         "value": [
             10,
@@ -773,7 +773,7 @@
         ],
         "material": "SCALE",
         "mundane": true,
-        "description": "A pair of scaled boots.",
+        "description": "A pair of scaled boots",
         "quality": "COMMON",
         "value": [
             12,
@@ -792,7 +792,7 @@
         ],
         "material": "SCALE",
         "mundane": true,
-        "description": "A pair of scaled leggings.",
+        "description": "A pair of scaled leggings",
         "quality": "COMMON",
         "value": [
             14,
@@ -814,7 +814,7 @@
         ],
         "material": "SCALE",
         "mundane": true,
-        "description": "A pair of scaled bracers.",
+        "description": "A pair of scaled bracers",
         "quality": "COMMON",
         "value": [
             8,
@@ -833,7 +833,7 @@
         ],
         "material": "SCALE",
         "mundane": true,
-        "description": "A scaled belt.",
+        "description": "A scaled belt",
         "quality": "COMMON",
         "value": [
             10,
@@ -855,7 +855,7 @@
         ],
         "material": "SCALE",
         "mundane": true,
-        "description": "A scaled pauldron.",
+        "description": "A scaled pauldron",
         "quality": "COMMON",
         "value": [
             12,
