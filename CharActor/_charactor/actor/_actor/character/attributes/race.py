@@ -63,6 +63,18 @@ class Race(BaseRace):
                                    attributes['speed'], attributes['languages'], attributes['traits'],
                                    attributes['subraces'])
 
+    def __json__(self):
+        return {
+            'title': self.title,
+            'description': self.description,
+            'racial_bonuses': self.racial_bonuses,
+            'age': self.age,
+            'size': self.size,
+            'speed': self.speed,
+            'languages': self.languages,
+            'traits': self.traits,
+            'subraces': self.subraces
+        }
 
 class SubRace(BaseRace):
     def __init__(self, title):

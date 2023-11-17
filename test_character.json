@@ -1,0 +1,208 @@
+{
+    "_actor_type": "Player",
+    "_name": "Unnamed",
+    "_age": 59,
+    "level": 1,
+    "_initial_ability_scores": {
+        "Strength": 12,
+        "Dexterity": 17,
+        "Constitution": 13,
+        "Intelligence": 17,
+        "Wisdom": 13,
+        "Charisma": 15
+    },
+    "_role": {
+        "title": "Bard",
+        "_class_description": "A master of lore.",
+        "_skill_points": 4,
+        "_proficiencies": [
+            "Light Armor",
+            "Simple Weapons",
+            "Hand Crossbows",
+            "Longswords",
+            "Rapiers",
+            "Shortswords"
+        ],
+        "_special_abilities": "Bardic Inspiration",
+        "_hit_die": 8
+    },
+    "_race": {
+        "title": "Half-Orc",
+        "description": "A formidable and fearsome creature, half-orcs are the product of an unlikely union between orc and human. They possess a fierce strength and ferocity in battle, tempered by a deep sense of honor and loyalty to their friends and family.",
+        "racial_bonuses": {
+            "Strength": 2,
+            "Constitution": 1
+        },
+        "age": {
+            "maturity": 14,
+            "maximum": 75
+        },
+        "size": "Medium",
+        "speed": 30,
+        "languages": [
+            "Common",
+            "Orc"
+        ],
+        "traits": [
+            "Darkvision",
+            "Menacing",
+            "Relentless Endurance",
+            "Savage Attacks"
+        ],
+        "subraces": null
+    },
+    "_background": {
+        "name": "Acolyte",
+        "description": "You spent your early days in a religious monastery or cloister. You may have traveled out into the world to spread the message of your religion or because you cast away the teachings of your faith, but deep inside you retain the lessons you learned as an acolyte.",
+        "skills": [
+            "Insight",
+            "Religion"
+        ],
+        "tools": null,
+        "languages": [
+            "Two of your choice"
+        ],
+        "equipment": [
+            "Holy Symbol",
+            "Prayer Book",
+            "Incense",
+            "Vestments",
+            "Common Clothes",
+            [
+                15,
+                "Gold Piece"
+            ]
+        ],
+        "special": {
+            "name": "Shelter of the Faithful",
+            "description": "As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle. You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple."
+        }
+    },
+    "_alignment": {
+        "title": "Unaligned",
+        "ethics": "None",
+        "morals": "None"
+    },
+    "_experience": 0,
+    "saving_throws": {
+        "Fortitude": 2,
+        "Reflex": 3,
+        "Will": 1
+    },
+    "initiative": 3,
+    "skillbook": {
+        "skills": [
+            1,
+            0,
+            1,
+            0,
+            2,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            2,
+            0,
+            0,
+            1
+        ]
+    },
+    "skill_points": 0,
+    "armor_class": 3,
+    "vision": 200,
+    "_traveling": false,
+    "Bard": {
+        "title": "Bard",
+        "_class_description": "A master of lore.",
+        "_skill_points": 4,
+        "_proficiencies": [
+            "Light Armor",
+            "Simple Weapons",
+            "Hand Crossbows",
+            "Longswords",
+            "Rapiers",
+            "Shortswords"
+        ],
+        "_special_abilities": "Bardic Inspiration",
+        "_hit_die": 8
+    },
+    "Half_Orc": {
+        "title": "Half-Orc",
+        "description": "A formidable and fearsome creature, half-orcs are the product of an unlikely union between orc and human. They possess a fierce strength and ferocity in battle, tempered by a deep sense of honor and loyalty to their friends and family.",
+        "racial_bonuses": {
+            "Strength": 2,
+            "Constitution": 1
+        },
+        "age": {
+            "maturity": 14,
+            "maximum": 75
+        },
+        "size": "Medium",
+        "speed": 30,
+        "languages": [
+            "Common",
+            "Orc"
+        ],
+        "traits": [
+            "Darkvision",
+            "Menacing",
+            "Relentless Endurance",
+            "Savage Attacks"
+        ],
+        "subraces": null
+    },
+    "Unaligned": {
+        "title": "Unaligned",
+        "ethics": "None",
+        "morals": "None"
+    },
+    "Acolyte": {
+        "name": "Acolyte",
+        "description": "You spent your early days in a religious monastery or cloister. You may have traveled out into the world to spread the message of your religion or because you cast away the teachings of your faith, but deep inside you retain the lessons you learned as an acolyte.",
+        "skills": [
+            "Insight",
+            "Religion"
+        ],
+        "tools": null,
+        "languages": [
+            "Two of your choice"
+        ],
+        "equipment": [
+            "Holy Symbol",
+            "Prayer Book",
+            "Incense",
+            "Vestments",
+            "Common Clothes",
+            [
+                15,
+                "Gold Piece"
+            ]
+        ],
+        "special": {
+            "name": "Shelter of the Faithful",
+            "description": "As an acolyte, you command the respect of those who share your faith, and you can perform the religious ceremonies of your deity. You and your adventuring companions can expect to receive free healing and care at a temple, shrine, or other established presence of your faith, though you must provide any material components needed for spells. Those who share your religion will support you (but only you) at a modest lifestyle. You might also have ties to a specific temple dedicated to your chosen deity or pantheon, and you have a residence there. This could be the temple where you used to serve, if you remain on good terms with it, or a temple where you have found a new home. While near your temple, you can call upon the priests for assistance, provided the assistance you ask for is not hazardous and you remain in good standing with your temple."
+        }
+    },
+    "Strength": {
+        "parent": "{{ parent }}",
+        "name": "Strength",
+        "_init_score": 14,
+        "_racial_bonus": 2,
+        "primary": false,
+        "short": "STR",
+        "score": 14,
+        "modifier": 2,
+        "temp_mod": 0,
+        "temp_mod_duration": 0
+    },
+    "Dexterity": {
+        "parent": "{{ parent }}",
+        "name": "Dexterity",
+        "_init_score": 17,
+        "reflex_save": 

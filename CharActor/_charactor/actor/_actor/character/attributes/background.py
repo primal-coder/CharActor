@@ -103,6 +103,17 @@ class BaseBackground(AbstractBackground):
         self.equipment = equipment
         self.special = special
         
+    def __json__(self) -> dict:
+        return {
+            'name': self.name,
+            'description': self.description,
+            'skills': self.skills,
+            'tools': self.tools,
+            'languages': self.languages,
+            'equipment': self.equipment,
+            'special': self.special
+        }
+        
 class Background(BaseBackground):
     def __init__(self) -> None:
         name = self.__class__.__name__

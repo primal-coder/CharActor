@@ -1,0 +1,277 @@
+{
+    "_actor_type": "Player",
+    "_name": "Unnamed",
+    "_age": 121,
+    "level": 1,
+    "_initial_ability_scores": {
+        "Strength": 12,
+        "Dexterity": 13,
+        "Constitution": 13,
+        "Intelligence": 16,
+        "Wisdom": 15,
+        "Charisma": 15
+    },
+    "_role": {
+        "title": "Druid",
+        "_class_description": "A master of nature.",
+        "_skill_points": 4,
+        "_proficiencies": [
+            "Light Armor",
+            "Medium Armor",
+            "Shields",
+            "Clubs",
+            "Daggers",
+            "Darts",
+            "Javelins",
+            "Maces",
+            "Quarterstaffs",
+            "Scimitars",
+            "Sickles",
+            "Slings",
+            "Spears"
+        ],
+        "_special_abilities": "Druidic Language",
+        "_hit_die": 8
+    },
+    "_race": {
+        "title": "Half-Elf",
+        "description": "A hybrid of elf and human, half-elves embody the best of both worlds, combining the grace and magic of the elves with the resilience and versatility of the humans. They are natural diplomats and mediators, with a talent for bridging cultural divides and forging alliances between different peoples.",
+        "racial_bonuses": {
+            "Charisma": 2
+        },
+        "age": {
+            "maturity": 20,
+            "maximum": 180
+        },
+        "size": "Medium",
+        "speed": 30,
+        "languages": [
+            "Common",
+            "Elvish"
+        ],
+        "traits": [
+            "Darkvision",
+            "Fey Ancestry",
+            "Skill Versatility",
+            "Cantrip",
+            "Extra Language"
+        ],
+        "subraces": null
+    },
+    "_background": {
+        "name": "Hermit",
+        "description": "You lived in seclusion - either in a sheltered community such as a monastery, or entirely alone - for a formative part of your life. In your time apart from the clamor of society, you found quiet, solitude, and perhaps some of the answers you were looking for.",
+        "skills": [
+            "Medicine",
+            "Religion"
+        ],
+        "tools": [
+            "Herbalism kit"
+        ],
+        "languages": [
+            "One of your choice"
+        ],
+        "equipment": [
+            "A scroll case stuffed full of notes from your studies or prayers",
+            "Winter Blanket",
+            "Common Clothes",
+            "Herbalism Kit",
+            [
+                5,
+                "Gold Piece"
+            ]
+        ],
+        "special": {
+            "name": "Discovery",
+            "description": "The quiet seclusion of your extended hermitage gave you access to a unique and powerful discovery. The exact nature of this revelation depends on the nature of your seclusion. It might be a great truth about the cosmos, the deities, the powerful beings of the outer planes, or the forces of nature. It could be a site that no one else has ever seen. You might have uncovered a fact that has long been forgotten, or unearthed some relic of the past that could rewrite history. It might be information that would be damaging to the people who or consigned you to exile, and hence the reason for your return to society. Work with your DM to determine the details of your discovery and its impact on the campaign."
+        }
+    },
+    "_alignment": {
+        "title": "Chaotic Good",
+        "ethics": "Chaotic",
+        "morals": "Good"
+    },
+    "_experience": 0,
+    "saving_throws": {
+        "Fortitude": 1,
+        "Reflex": 1,
+        "Will": 2
+    },
+    "initiative": 1,
+    "skillbook": {
+        "skills": [
+            0,
+            0,
+            1,
+            0,
+            0,
+            2,
+            1,
+            0,
+            0,
+            0,
+            1,
+            0,
+            0,
+            1,
+            0,
+            0,
+            0,
+            0,
+            1
+        ]
+    },
+    "skill_points": 0,
+    "armor_class": 12,
+    "vision": 200,
+    "_traveling": false,
+    "Druid": {
+        "title": "Druid",
+        "_class_description": "A master of nature.",
+        "_skill_points": 4,
+        "_proficiencies": [
+            "Light Armor",
+            "Medium Armor",
+            "Shields",
+            "Clubs",
+            "Daggers",
+            "Darts",
+            "Javelins",
+            "Maces",
+            "Quarterstaffs",
+            "Scimitars",
+            "Sickles",
+            "Slings",
+            "Spears"
+        ],
+        "_special_abilities": "Druidic Language",
+        "_hit_die": 8
+    },
+    "Half_Elf": {
+        "title": "Half-Elf",
+        "description": "A hybrid of elf and human, half-elves embody the best of both worlds, combining the grace and magic of the elves with the resilience and versatility of the humans. They are natural diplomats and mediators, with a talent for bridging cultural divides and forging alliances between different peoples.",
+        "racial_bonuses": {
+            "Charisma": 2
+        },
+        "age": {
+            "maturity": 20,
+            "maximum": 180
+        },
+        "size": "Medium",
+        "speed": 30,
+        "languages": [
+            "Common",
+            "Elvish"
+        ],
+        "traits": [
+            "Darkvision",
+            "Fey Ancestry",
+            "Skill Versatility",
+            "Cantrip",
+            "Extra Language"
+        ],
+        "subraces": null
+    },
+    "ChaoticGood": {
+        "title": "Chaotic Good",
+        "ethics": "Chaotic",
+        "morals": "Good"
+    },
+    "Hermit": {
+        "name": "Hermit",
+        "description": "You lived in seclusion - either in a sheltered community such as a monastery, or entirely alone - for a formative part of your life. In your time apart from the clamor of society, you found quiet, solitude, and perhaps some of the answers you were looking for.",
+        "skills": [
+            "Medicine",
+            "Religion"
+        ],
+        "tools": [
+            "Herbalism kit"
+        ],
+        "languages": [
+            "One of your choice"
+        ],
+        "equipment": [
+            "A scroll case stuffed full of notes from your studies or prayers",
+            "Winter Blanket",
+            "Common Clothes",
+            "Herbalism Kit",
+            [
+                5,
+                "Gold Piece"
+            ]
+        ],
+        "special": {
+            "name": "Discovery",
+            "description": "The quiet seclusion of your extended hermitage gave you access to a unique and powerful discovery. The exact nature of this revelation depends on the nature of your seclusion. It might be a great truth about the cosmos, the deities, the powerful beings of the outer planes, or the forces of nature. It could be a site that no one else has ever seen. You might have uncovered a fact that has long been forgotten, or unearthed some relic of the past that could rewrite history. It might be information that would be damaging to the people who or consigned you to exile, and hence the reason for your return to society. Work with your DM to determine the details of your discovery and its impact on the campaign."
+        }
+    },
+    "Strength": {
+        "parent": "{{ parent }}",
+        "name": "Strength",
+        "_init_score": 12,
+        "primary": false,
+        "short": "STR",
+        "score": 12,
+        "modifier": 1,
+        "temp_mod": 0,
+        "temp_mod_duration": 0
+    },
+    "Dexterity": {
+        "parent": "{{ parent }}",
+        "name": "Dexterity",
+        "_init_score": 13,
+        "primary": false,
+        "short": "DEX",
+        "score": 13,
+        "modifier": 1,
+        "temp_mod": 0,
+        "temp_mod_duration": 0
+    },
+    "Constitution": {
+        "parent": "{{ parent }}",
+        "name": "Constitution",
+        "_init_score": 13,
+        "primary": false,
+        "short": "CON",
+        "score": 13,
+        "modifier": 1,
+        "temp_mod": 0,
+        "temp_mod_duration": 0
+    },
+    "Intelligence": {
+        "parent": "{{ parent }}",
+        "name": "Intelligence",
+        "_init_score": 16,
+        "primary": true,
+        "short": "INT",
+        "score": 16,
+        "modifier": 3,
+        "temp_mod": 0,
+        "temp_mod_duration": 0
+    },
+    "Wisdom": {
+        "parent": "{{ parent }}",
+        "name": "Wisdom",
+        "_init_score": 15,
+        "primary": true,
+        "short": "WIS",
+        "score": 15,
+        "modifier": 2,
+        "temp_mod": 0,
+        "temp_mod_duration": 0
+    },
+    "Charisma": {
+        "parent": "{{ parent }}",
+        "name": "Charisma",
+        "_init_score": 17,
+        "_racial_bonus": 2,
+        "primary": false,
+        "short": "CHA",
+        "score": 17,
+        "modifier": 3,
+        "temp_mod": 0,
+        "temp_mod_duration": 0
+    },
+    "hp": 9,
+    "_is_turn": false
+}

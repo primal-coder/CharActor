@@ -8,23 +8,18 @@ from typing import Optional as _Optional, Any
 from entyty import _AbstractEntity as AbstractEntity
 
 import getch
-import pyglet.window as _window
 import pymunk
 from pymunk import Vec2d
 
 from dicepy import Roll as _Roll
 from dicepy import Die as _Die
 from .character import *
-from CharActor._objects import Armory, Goods
+from CharObj import Armory, Goods, Weapon, Armor, ItemStack
 from CharActor._charactor.dicts import load_dict
 
-from CharActor import log, _objects
+from CharActor import log
 
 _ability_rolls = _Roll.ability_rolls
-
-_key = _window.key
-
-_MOVE_KEYS = [_key.W, _key.D, _key.S, _key.A]
 
 _LEVELS = load_dict('levels')
 
@@ -161,12 +156,12 @@ class BaseActor(AbstractEntity):
     def character_sheet(self):
         def of_equipment():
             for piece in self.inventory.equipment._slots.values():
-                if piece is not None and not isinstance(piece, _objects.Weapon):
+                if piece is not None and not isinstance(piece, Weapon):
                     yield piece
 
         def of_items():
             for item in self.inventory.items:
-                if item is not None and not (isinstance(item, (_objects.Weapon, _objects.Armor))):
+                if item is not None and not (isinstance(item, (Weapon, Armor))):
                     yield item
 
         def tab(tabs=1):
@@ -505,11 +500,11 @@ class BaseActor(AbstractEntity):
         self.level += 1
 
     def __repr__(self):
-        # return f'A level {self.level}, {self._race.title} {self._role.title} named {self.name}\nLocation: Cell -> {
-        # self._cell_name}@{self._position}\n\n{self.Strength}\tInitiative: {self.initiative}\n{self.Dexterity}\tHP:
-        # {self.hp}\n{self.Constitution}\tAC: {self.armor_class}\n{self.Intelligence}\n{self.Wisdom}\n{
-        # self.Charisma}\n\n'
-        return f'{self.name}, {self._race.title} {self._role.title}'
+    #     # return f'A level {self.level}, {self._race.title} {self._role.title} named {self.name}\nLocation: Cell -> {
+    #     # self._cell_name}@{self._position}\n\n{self.Strength}\tInitiative: {self.initiative}\n{self.Dexterity}\tHP:
+    #     # {self.hp}\n{self.Constitution}\tAC: {self.armor_class}\n{self.Intelligence}\n{self.Wisdom}\n{
+    #     # self.Charisma}\n\n'
+        return f'{self._race.title}'
 
     # def _draw(self):
     #     self._shape.draw()
@@ -597,7 +592,28 @@ class BaseCharacter(BaseActor):
         self._action_history = []
         self._is_turn = False
         self._nearby_items = {}
+        self._nearby_units = {}
+        self._nearby_other = {}
         self._target = None
+        
+    def __json__(self):
+        _dict = {}
+        for key, value in self.__dict__.copy().items():
+            if hasattr(value, '__json__'):
+                _dict[key] = value.__json__()
+            elif key in [
+                'Strength', 'Dexterity', 'Constitution', 'Intelligence', 'Wisdom', 'Charisma', 'Barbarian', 'Bard', 'Cleric', 
+                'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard', 'Human', 'Dwarf', 
+                'Elf', 'Gnome', 'Half-Elf', 'Half-Orc', 'Halfling', 'Tiefling', 'LawfulGood', 'Lawful', 'LawfulEvil', 'Good', 
+                'TrueNeutral', 'Evil', 'ChaoticGood', 'Chaotic', 'ChaoticEvil', 'Unaligned', 'Acolyte', 'Charlatan', 
+                'Criminal', 'Entertainer', 'FolkHero', 'GuildArtisan', 'Hermit', 'Noble', 'Outlander', 'Sage', 'Sailor', 
+                'Soldier', 'Urchin', '_skills', 'inventory', 'skillbook', '_abilities', '_grid', '_grid_entity', '_actions', 
+                '_action_history', '_nearby_items', '_nearby_units', '_nearby_other', '_target'
+            ]:
+                continue
+            else:
+                _dict[key] = value
+        return _dict        
 
     def _create_properties(self):
         """Called when the character is added to a grid. Creates the relevant properties and makes them accessible to
@@ -624,8 +640,8 @@ class BaseCharacter(BaseActor):
             setattr(self.__class__, 'grid_entity', property(lambda self: self._grid_entity))
             properties = {
                 'movements': self.grid_entity.movements,
-                'movements_remaining': self.grid_entity.movements_remaining,
                 'movement_queue': self.grid_entity.movement_queue,
+                'movement_energy': self.grid_entity.movement_energy,
                 'cell': self.grid_entity.cell,
                 'cell_name': self.grid_entity.cell_name,
                 'cell_history': self.grid_entity.cell_history,
@@ -640,7 +656,7 @@ class BaseCharacter(BaseActor):
                 setattr(self.__class__, attr, property(lambda self, attr=attr: getattr(self.grid_entity, attr)))
             self._push_handlers(on_turn_end=self.grid_entity.end_turn)
         else:
-            for attr in ['movements', 'movements_remaining', 'movement_queue', 'cell', 'cell_name', 'cell_history', 'last_cell', 'x', 'y', 'position', 'path']:
+            for attr in ['movements', 'movement_queue', 'movement_energy', 'cell', 'cell_name', 'cell_history', 'last_cell', 'x', 'y', 'position', 'path']:
                 delattr(self, attr)
 
     @property
@@ -650,7 +666,7 @@ class BaseCharacter(BaseActor):
     @actions.setter
     def actions(self, actions: _Optional[dict[str, dict[str, Any]]] = None):
         if actions is None:
-            if self.grid_entity is not None:
+            if hasattr(self, 'grid_entity') and self.grid_entity is not None:
                 actions = {
                     'move': self.grid_entity.actions['move'], 
                     'attack': {'target': None, 'weapon': None, 'result': None}, 
@@ -659,7 +675,10 @@ class BaseCharacter(BaseActor):
                 self._actions = actions
                 return
             actions = {'move': {},
-                       'attack': {'target': None, 'weapon': None, 'result': None}, 'free': [], 'quick': []}
+                       'attack': {'target': None, 'weapon': None, 'result': None}, 
+                       'free': [], 
+                       'quick': []}
+            self._actions = actions
             return
         self._actions = actions
 
@@ -681,7 +700,8 @@ class BaseCharacter(BaseActor):
 
     def end_turn(self):
         self._action_history.append(self.actions)
-        self.grid_entity.end_turn()
+        if hasattr(self, 'grid_entity'):
+            self.grid_entity.end_turn()
         self.actions = None
 
     def _join_grid(self, grid):
@@ -702,25 +722,44 @@ class BaseCharacter(BaseActor):
     def _set_target(self, target):
         self._target = target
 
-    def move(self, direction):
-        if direction in ['north_west', 'north', 'north_east', 'east', 'south_east', 'south', 'south_west', 'west']:
-            mvmnt_index = self.grid_entity.move_in_direction(direction)
-            self.actions['move'] = self.grid_entity.actions['move']
-            if mvmnt_index is not None:
-                return f'{self.actions["move"][mvmnt_index]["from"]} --> {self.actions["move"][mvmnt_index]["to"]}'
-            else:
-                return f'Cannot move {direction}.'
+    def move(self, direction: str = None, cell: object | str = None):
+        FROM = self.cell.designation
+        if cell is not None:
+            if isinstance(cell, str):
+                cell = self.grid[cell]    
+            self.grid_entity.move(cell, teleport = True)
+            return
+        if direction is not None and direction in {
+            'north_west',
+            'north',
+            'north_east',
+            'east',
+            'south_east',
+            'south',
+            'south_west',
+            'west',
+        }:
+            return self._extracted_from_move_18(direction, FROM)
+
+    # TODO Rename this here and in `move`
+    def _extracted_from_move_18(self, direction, FROM):
+        move = self.grid_entity.move_in_direction(direction)
+        TO = self.cell.designation
+        if not move:
+            return move
+        self.actions['move'] = self.grid_entity.actions['move']
+        self._update_nearby()
+        return f'{FROM} --> {TO}'
             
     def attack(self):
-        if 'attack' in self._actions.keys():
-            print('Already attacked this turn.')
-            return
-        if self._target is None:
-            print('No target.')
-            return
-        if self.grid.get_distance(self.cell_name, self._target.cell_name) > self.inventory.equipment['MAIN_HAND'].range:
-            print('Target out of range.')
-            return
+        if self.actions['attack'] != {'target': None, 'weapon': None, 'result': None}:
+            return 'You have already attacked this turn.'
+        elif self._target is None:
+            return 'No target.'
+        elif hasattr(self, 'grid') and self.grid is not None and self.grid.get_distance(self.cell_name, self._target.cell_name) > self.inventory.equipment['MAIN_HAND'].range:
+            return 'Target out of range.'
+        else:
+            log(f'{self.name} and {self.target.name} do not inhabit a grid, so attack is emulated. Combatants are assumed to be within range of each other.')
         result = self._attack_figure()
         print(result)
         self.actions['attack'] = {'target': self._target, 'weapon': self.inventory.equipment['MAIN_HAND'],
@@ -729,13 +768,22 @@ class BaseCharacter(BaseActor):
     def _attack_figure(self):
         attack_roll = d20.roll()
         if attack_roll == 20:
-            damage = self.inventory.equipment['MAIN_HAND'].damage.roll() * 2
+            damage = sum(
+                self.inventory.equipment['MAIN_HAND'].damage[1].roll()
+                for _ in range(self.inventory.equipment['MAIN_HAND'].damage[0])
+            )
+            damage += self.Strength.modifier
+            damage *= 2
             self._target.hp -= damage
             return f'Critical hit! {damage} damage dealt.'
         elif attack_roll == 1:
             return 'Critical miss!'
         elif attack_roll + self.Strength.modifier >= self._target.armor_class:
-            damage = self.inventory.equipment['MAIN_HAND'].damage.roll() + self.Strength.modifier
+            damage = sum(
+                self.inventory.equipment['MAIN_HAND'].damage[1].roll()
+                for _ in range(self.inventory.equipment['MAIN_HAND'].damage[0])
+            )
+            damage += self.Strength.modifier
             self._target.hp -= damage
             return f'{damage} damage dealt.'
         else:
@@ -765,35 +813,80 @@ class BaseCharacter(BaseActor):
     def _is_in_view(self, other):
         return self._get_distance(other) <= 40
 
-    def _see_item(self, item):
-        direction = get_direction(item.position, self.position)
-        if self._is_in_pickup_range(item):
-            self._nearby_items[item.name] = item
-            print(f'You see {repr(item)} at your feet.')
-        else:
-            print(f'You see {repr(item)} to the {direction}')
+    def _see_item(self, item, direction):
+        CARDINAL_DIRECTIONS = ['East', 'North-East', 'North', 'North-West', 'West', 'South-West', 'South', 'South-East']
+        direction = direction.split() if len(direction) > 1 else [direction]
+        for d in range(len(direction)):
+            if direction[d] == 'S':
+                direction[d] = 'South'
+            elif direction[d] == 'N':
+                direction[d] = 'North'
+            elif direction[d] == 'E':
+                direction[d] = 'East'
+            elif direction[d] == 'W':
+                direction[d] = 'West'
+        direction = '-'.join(direction) if len(direction) > 1 else direction[0]
+        dindx = CARDINAL_DIRECTIONS.index(direction)
+        Dist = self.grid.get_distance(self.cell_name, item.cell_name, 'cells')
+        if not self._is_in_pickup_range(item):
+            return f'You see {repr(item)} to the {direction}'
+        self._nearby_items[item.name] = item
+        From = (dindx + 4) % 8
+        view = item.__view__((From, Dist))
+        return f'You see {view} at your feet.'
 
-    def look_around(self):
+
+
+    def _update_nearby(self):
         vision = self.vision//5
+        nearby_items = {}
+        nearby_units = {}
         for cell in self.grid.get_area(self.cell_name, vision):
             if cell.entry_object['items'] is not None:
-                self._nearby_items |= cell.entry_object['items']
+                nearby_items |= cell.entry_object['items']
             if cell.entry_unit['players'] is not None:
-                for player in cell.entry_unit['players'].values():
-                    if player.parent != self:
-                        print(f'You see a {player.parent._race.title()} {player.parent._role.title()} nearby.')
+                nearby_units |= cell.entry_unit['players']
+        self._nearby_items = nearby_items
+        self._nearby_units = nearby_units
+
+    def look_around(self):
+        self._update_nearby()
 
         directions = {
             self.grid.get_direction(self.cell, item.cell)
             for name, item in self._nearby_items.items()
         }
-        if len(self._nearby_items) > 8 or len(directions) > 4:
-            print('There are several objects scattered around you,')
-        elif len(self._nearby_items) < 4:
-            for item in self._nearby_items.values():
-                self._see_item(item)
 
+        if len(self._nearby_items) > 8:
+            return 'There are several objects scattered around you,'
+        elif len(self._nearby_items) <= 7:
+            return {self._see_item(item, direction) for item, direction in zip(self._nearby_items.values(), directions)}
 
+    def look_to(self, direction):
+        self._update_nearby()
+        items_in_direction = []
+        units_in_direction = []
+        for item in self._nearby_items.values():
+            d = self.grid.get_direction(self.cell, item.cell)
+            if '-' in direction:
+                ds = direction.split('-')
+                ds.append(direction)
+                if d in ds:
+                    items_in_direction.append(item)
+            elif d.startswith(direction) or d.endswith(direction):
+                items_in_direction.append(item)
+        for unit in self._nearby_units.values():
+            d = self.grid.get_direction(self.cell, unit.cell)
+            if '-' in direction:
+                ds = direction.split('-')
+                ds.append(direction)
+                if d in ds:
+                    units_in_direction.append(unit)
+        in_direction = items_in_direction + units_in_direction
+        for att in in_direction:
+            self._see_item(att, direction)
+                    
+                
         # for item in self.grid.armory._grid_instances.values():
         #     item_count += 1 if self._is_in_sight(item) else 0
         # for item in self.grid.goods._grid_instances.values():

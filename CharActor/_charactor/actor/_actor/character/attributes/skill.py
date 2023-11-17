@@ -64,6 +64,16 @@ class Skill(AbstractSkill):
     def __getstate__(self):
         return self.level
 
+    def __json__(self):
+        return {
+            'name': self.name,
+            '_parent': '{{ parent }}',
+            'description': self.description,
+            'ability': self.ability,
+            'proficient': self.proficient,
+            'level': self.level
+        }
+
     def level_up(self):
         self.dispatch_event('on_level_up', self)
 
@@ -95,6 +105,11 @@ class Skillbook(_QuietDict, metaclass=SkillbookMeta):
         self._parent = parent
         super(Skillbook, self).__init__()
         
+    def __json__(self):
+        return {
+            'skills': [skill.level for skill in self.values()]
+        }
+
     def __getstate__(self):
         state = self.__dict__.copy()
         for skill_name, skill in SKILLS.items():

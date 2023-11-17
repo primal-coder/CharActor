@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name='CharActor',
-    version='0.7.3',
+    version='0.9.4',
     description='A module for creating and managing rpg characters.',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -13,7 +13,13 @@ setup(
     author_email='joesaysahoy@gmail.com',
     url='https://github.com/primal-coder/CharActor',
     packages=find_packages(),
-    install_requires=['dicepy', 'entyty', 'getch', 'pyglet', 'pymunk'],
+    install_requires=[
+        'dicepy', 
+        'entyty',
+        'CharObj', 
+        'getch', 
+        'pyglet', 
+        'pymunk'],
     python_requires='>=3.8',
     keywords='rpg character dnd d&d dungeons and dragons dungeons & dragons player character actor charactor',
     classifiers=[

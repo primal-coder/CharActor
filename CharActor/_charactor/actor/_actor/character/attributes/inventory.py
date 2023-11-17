@@ -1,5 +1,5 @@
 from pyglet.event import EventDispatcher as _EventDispatcher
-from CharActor._objects import ItemStack, Armory, Goods
+from CharObj import ItemStack, Armory, Goods
 
 EQUIPMENT_SLOTS = {
     'HEAD': None,
@@ -68,6 +68,13 @@ class Equipment:
     
     def __getstate__(self):
         return self._slots
+    
+    def __json__(self):
+        _dict = self.__dict__.copy()
+        return {
+            key: '{{ parent }}' if key == '_parent' else value
+            for key, value in _dict.items()
+        }
 
     def update(self, other=None, **kwargs):
         if other:
@@ -216,18 +223,17 @@ class Inventory:
             return
         for item in self.items:
             if item.name == item_name:
-                if isinstance(item, ItemStack):
-                    if item.quantity > 1:
-                        item.remove(1)
-                    else:
-                        self.items.remove(item)
-                elif isinstance(item.slot, list):
+                if isinstance(item, ItemStack) and item.quantity > 1:
+                    item.remove(1)
+                elif isinstance(item, ItemStack) or not isinstance(item.slot, list):
+                    self.items.remove(item)
+                else:
                     for slot in item.slot:
                         if self.equipment[slot] == item:
                             self.equipment.unequip_item(item)
+                            self.items.remove(item)
                 self.carry_weight = self.calc_carry_weight()
-                # self._dispatcher.dispatch_event('on_remove_item', item)
-                return item
+                break
             
     def drop_item(self, item_name: str = None):
         self.remove_item(item_name)

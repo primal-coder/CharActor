@@ -331,6 +331,13 @@ class Ability(AbstractAbility):
         self.temp_mod = 0
         self.temp_mod_duration = 0
 
+    def __json__(self):
+        _dict = self.__dict__.copy()
+        return {
+            key: '{{ parent }}' if key == "parent" else value
+            for key, value in _dict.items() if not key.endswith('_save')
+        }
+
 class AbilityFactory:
     """A factory class for creating Ability _objects.
 

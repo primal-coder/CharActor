@@ -52,6 +52,13 @@ class BaseAlignment(AbstractAlignment):
         self.title = title.replace('_', ' ').title()
         self.ethics = attrs['ethics']
         self.morals = attrs['morals']
+        
+    def __json__(self):
+        return {
+            'title': self.title,
+            'ethics': self.ethics,
+            'morals': self.morals
+        }
 
 class AlignmentFactory:
     @staticmethod

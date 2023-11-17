@@ -1,1 +1,0 @@
-from .clothing import _CLOTHING_DICT, _Clothing, _ClothingByName, _ClothingFactory

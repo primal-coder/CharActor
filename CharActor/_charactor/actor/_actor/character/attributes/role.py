@@ -86,7 +86,7 @@ class AbstractRole:
 
     def __repr__(self):
         return f'{self.class_description}'
-
+    
 class BaseRole(AbstractRole):
     def __init__(self, title: str, class_description: str, hit_die: _Union[str, Die], skill_points: int, proficiencies: list[str]):
         self.title = title
@@ -102,7 +102,18 @@ class Role(BaseRole):
         attributes = ROLE_ATTRIBUTES.get(title)
         super(Role, self).__init__(attributes['title'], attributes['_class_description'], attributes['hit_die'], attributes['skill_points'],
                                    attributes['proficiencies'])
-
+        
+    def __json__(self):
+        _dict = self.__dict__.copy()
+        
+        _new_dict = {
+            key: value
+            for key, value in _dict.items()
+            if key not in ['_special_abilities', '_hit_die', _SPECIAL_ABILITIES[self.title]['name'].replace(" ", "_").lower()]
+        }
+        _new_dict['_special_abilities'] = ROLE_ATTRIBUTES[self.title]['special_ability']
+        _new_dict['_hit_die'] = self.hit_die.value
+        return _new_dict    
     def _add_special_ability(self):
         ability_name = _SPECIAL_ABILITIES[self.title]["name"]
         if ability_name is not None:
