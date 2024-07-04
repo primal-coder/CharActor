@@ -212,8 +212,8 @@ class Inventory:
     # TODO Rename this here and in `pick_up` and `add_item`
     def acquire_possession(self, item):
         self.items.append(item)
-        if hasattr(item, 'on_pick_up'):
-            item.on_pick_up(self._parent)
+        if hasattr(item, '_pick_up'):
+            item._pick_up(self._parent)
         item.owner = self._parent
         self.carry_weight = self.calc_carry_weight()
         # self._dispatcher.dispatch_event('on_add_item', item)        

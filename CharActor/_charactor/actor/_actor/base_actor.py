@@ -176,7 +176,7 @@ class BaseActor(AbstractEntity):
             item_count += 1
         items = of_items()
         piece_of_equipment = of_equipment()
-        return f"""A level {self.level} {self._alignment} {self._race.title} {self._role.title}
+        return f"""A level {self.level} {self._alignment} {self._race.title} {self._role.title} {self._background.title} named {self.name}
     
 {self.Strength}\tInitiative: {self.initiative}\t\tEquipment:
 {self.Dexterity}\tHP: {self.hp}\t\t\t{next(piece_of_equipment) if equipment_count > 0 else ''}\t\t{next(piece_of_equipment) if equipment_count > 1 else ''}\t{next(piece_of_equipment) if equipment_count > 2 else '' }\t\t{next(piece_of_equipment) if equipment_count > 3 else ''}
@@ -269,9 +269,6 @@ class BaseActor(AbstractEntity):
                 del state[k]
             if k in ['_role', '_race', '_background', '_alignment']:
                 state[k] = v.title
-            if k == '_abilities':
-                for K, V in state['_abilities'].items():
-                    state['_abilities'][K] = V.score
         return state
             
     def __setstate__(self, state):
@@ -658,6 +655,14 @@ class BaseCharacter(BaseActor):
         else:
             for attr in ['movements', 'movement_queue', 'movement_energy', 'cell', 'cell_name', 'cell_history', 'last_cell', 'x', 'y', 'position', 'path']:
                 delattr(self, attr)
+                
+    @property
+    def grid(self):
+        return self._grid
+    
+    @grid.setter
+    def grid(self, grid):
+        self._grid = grid
 
     @property
     def actions(self) -> dict[str, dict[str, Any]]:
@@ -752,11 +757,11 @@ class BaseCharacter(BaseActor):
         return f'{FROM} --> {TO}'
             
     def attack(self):
-        if self.actions['attack'] != {'target': None, 'weapon': None, 'result': None}:
-            return 'You have already attacked this turn.'
-        elif self._target is None:
+        # if self.actions['attack'] != {'target': None, 'weapon': None, 'result': None}:
+        #     return 'You have already attacked this turn.'
+        if self._target is None:
             return 'No target.'
-        elif hasattr(self, 'grid') and self.grid is not None and self.grid.get_distance(self.cell_name, self._target.cell_name) > self.inventory.equipment['MAIN_HAND'].range:
+        elif hasattr(self, 'grid') and self.grid is not None and self.grid.get_distance(self.cell_name, self._target.cell_name) > self.inventory.equipment['MAIN_HAND'].weapon_range[0]:
             return 'Target out of range.'
         else:
             log(f'{self.name} and {self.target.name} do not inhabit a grid, so attack is emulated. Combatants are assumed to be within range of each other.')

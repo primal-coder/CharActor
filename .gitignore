@@ -4,7 +4,8 @@ CharActor.egg-info
 dist/
 .idea
 __pycache__
-__pycache__/*
+*/__pycache__/*
 .monster
 character_bank/
 *.pyc
+*.log

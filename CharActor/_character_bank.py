@@ -1,5 +1,5 @@
 import pickle as _pickle
-
+import json as _json
 from CharActor._quiet_dict import QuietDict as _QuietDict
 from ._charactor.actor._actor import _character_list, _ALIGNMENTS, _BACKGROUNDS
 
@@ -10,8 +10,8 @@ class _create(_QuietDict):
     @staticmethod
     def random_character(obj_name=None, name='Unnamed'):
         import random as _random
-        alignment = _random.choice(list(_ALIGNMENTS.keys()))
-        background = _random.choice(list(_BACKGROUNDS.keys()))
+        alignment = _random.choice(list(_ALIGNMENTS.keys()).remove('Unaligned'))
+        background = _random.choice(list(_BACKGROUNDS.keys()).remove('Custom'))
         return f'{obj_name} = _Create.{_char_list[_random.randint(0, len(_char_list) - 1)]}("{name}", "{background}", "{alignment}")'
 
     def __init__(self):
@@ -71,3 +71,8 @@ _Create = _create()
 for _k in _character_list.__dict__.copy().keys():
     if _k not in _char_list and _k not in  ['random_character', '_char_list']:
         delattr(_character_list, _k)
+
+
+def _load_character(file_name):
+    with open(f'{file_name}.json') as file:
+        chardict = _json.load(file)

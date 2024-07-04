@@ -5,7 +5,7 @@ date = time.strftime('%Y-%m-%d', time.localtime())
 
 _logging.addLevelName(99, 'CHARACTOR')
 logger = _logging.getLogger('CHARACTOR')
-file_handler = _logging.FileHandler(f'logs/{date}.log', 'w')
+file_handler = _logging.FileHandler(f'logs/{date}.log', 'a')
 formatter = _logging.Formatter('%(asctime)s - %(message)s')
 file_handler.setFormatter(formatter)
 file_handler.setLevel(99)

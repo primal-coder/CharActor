@@ -319,12 +319,12 @@ class Ability(AbstractAbility):
         self.name = self.__class__.__name__.capitalize()
         self._init_score = parent._initial_ability_scores[
             self.name] if parent._initial_ability_scores is not None else None
-        if self.name in parent._race.racial_bonuses.keys():
+        if hasattr(parent, '_race') and self.name in parent._race.racial_bonuses.keys():
             self._racial_bonus = parent._race.racial_bonuses[self.name]
             self._init_score += self._racial_bonus
         if ABILITIES[self.name]["Save"] is not None:
             setattr(self, f'{ABILITIES[self.name]["Save"].lower()}_save', self.ability_check)
-        self.primary = self.is_primary(self.parent._role.title)
+        self.primary = self.is_primary(self.parent._role.title) if hasattr(self.parent, '_role') else False
         self.short = self.name[:3].upper()
         self.score = self._init_score
         self.modifier = (self.score - 10) // 2
